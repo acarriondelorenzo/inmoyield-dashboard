@@ -62,6 +62,18 @@
      "detalle": "Nuevo comentario: \"13.07 Informe Actualización\""
     }
    ]
+  },
+  {
+   "fecha": "2026-07-14",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Pantoja (Fase II)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"15.06 Subsanaciones para LPO. Una vezk obtenida. 60 días max para escrituras de PH.\""
+    }
+   ]
   }
  ]
 }
