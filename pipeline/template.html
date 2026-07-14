@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>INMOYIELD — Dashboard Cartera Activa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --navy:#0b1f3a; --navy2:#132a4d; --gold:#c9a24b; --gold-light:#e8d9ae;
+    --green:#1f9d55; --amber:#d99a2b; --red:#c0392b;
+    --bg:#f4f6f9; --card:#ffffff; --border:#e2e6ee; --text:#1c2536; --muted:#6b7688;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:28px 36px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;}
+  header h1{margin:0;font-size:22px;font-weight:600;letter-spacing:.3px;}
+  header .sub{color:var(--gold-light);font-size:13px;margin-top:4px;}
+  header .meta{text-align:right;font-size:12px;color:#c7d0e0;line-height:1.6;}
+  header .meta b{color:#fff;}
+  main{padding:24px 36px 60px;max-width:1500px;margin:0 auto;}
+
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:22px;}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;box-shadow:0 1px 2px rgba(20,30,60,.04);}
+  .kpi .label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:6px;}
+  .kpi .value{font-size:22px;font-weight:700;color:var(--navy);}
+  .kpi .value.green{color:var(--green);} .kpi .value.amber{color:var(--amber);} .kpi .value.red{color:var(--red);}
+  .kpi .foot{font-size:11px;color:var(--muted);margin-top:4px;}
+
+  .grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-bottom:22px;}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;}
+  .panel h3{margin:0 0 14px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);border-bottom:2px solid var(--gold-light);padding-bottom:8px;}
+
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:12.5px;}
+  .bar-row .lbl{width:150px;flex:0 0 150px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .bar-track{flex:1;background:#eef1f6;border-radius:5px;height:16px;position:relative;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--navy),#2d5aa8);}
+  .bar-val{width:90px;flex:0 0 90px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;}
+
+  .status-legend{display:flex;gap:18px;margin-top:10px;font-size:12px;color:var(--muted);flex-wrap:wrap;}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;}
+  .dot.green{background:var(--green);} .dot.amber{background:var(--amber);} .dot.red{background:var(--red);}
+
+  .donut-wrap{display:flex;align-items:center;gap:22px;}
+  .donut-list{font-size:12.5px;flex:1;}
+  .donut-list div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--border);}
+
+  .flagbox{background:#fff7e8;border:1px solid #f0d9a3;border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:13px;color:#6b5117;}
+  .flagbox b{color:#8a6412;}
+
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+  .toolbar input[type=text]{padding:8px 12px;border:1px solid var(--border);border-radius:7px;font-size:13px;min-width:220px;}
+  .toolbar select{padding:8px 10px;border:1px solid var(--border);border-radius:7px;font-size:13px;background:#fff;}
+  .toolbar .count{margin-left:auto;font-size:12px;color:var(--muted);}
+
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 1px 2px rgba(20,30,60,.04);}
+  thead th{background:var(--navy);color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.4px;padding:10px 10px;text-align:left;cursor:pointer;white-space:nowrap;position:sticky;top:0;}
+  thead th:hover{background:var(--navy2);}
+  thead th.num, td.num{text-align:right;}
+  tbody td{padding:9px 10px;border-bottom:1px solid var(--border);font-size:12.5px;vertical-align:top;}
+  tbody tr:hover{background:#f7f9fc;}
+  .proj{font-weight:600;color:var(--navy);}
+  .sub-proj{font-size:11px;color:var(--muted);}
+  .badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;}
+  .badge.green{background:#e5f6ec;color:var(--green);}
+  .badge.amber{background:#fdf1de;color:var(--amber);}
+  .badge.red{background:#fbe7e4;color:var(--red);}
+  .progress{width:70px;height:7px;background:#eef1f6;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:6px;}
+  .progress i{display:block;height:100%;background:var(--gold);}
+  .comment{max-width:230px;font-size:11.5px;color:var(--muted);}
+  .flagged{border-left:3px solid var(--red);}
+  .tir{font-weight:700;color:var(--navy);}
+
+  footer{max-width:1500px;margin:0 auto;padding:0 36px 40px;font-size:11.5px;color:var(--muted);}
+  footer a{color:#2d5aa8;}
+  .updatebar{display:flex;align-items:center;gap:10px;margin:18px 0 -4px;font-size:12px;color:var(--muted);}
+  .updatebar button{background:var(--navy);color:#fff;border:none;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;}
+  .updatebar button:hover{background:var(--navy2);}
+  .tabbtn{background:#eef1f6;color:var(--text);border:1px solid var(--border);padding:6px 14px;border-radius:6px;font-size:12.5px;cursor:pointer;}
+  .tabbtn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .change-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border);font-size:12.5px;align-items:flex-start;}
+  .change-tag{flex:0 0 90px;font-size:10px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;padding:3px 7px;border-radius:5px;text-align:center;height:fit-content;}
+  .change-tag.nuevo_detectado{background:#e5f6ec;color:var(--green);}
+  .change-tag.importe{background:#e8f0fb;color:#1a56b0;}
+  .change-tag.comentario{background:#fdf1de;color:var(--amber);}
+  .change-tag.tir{background:#f3e8fb;color:#7b3ec4;}
+  .change-tag.ya_no_activa{background:#fbe7e4;color:var(--red);}
+  .change-note{color:var(--muted);font-size:11px;font-style:italic;margin-top:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>INMOYIELD — Cartera Activa</h1>
+    <div class="sub">Seguimiento visual de inversiones en curso</div>
+  </div>
+  <div class="meta">
+    Datos extraídos de <b>Pipeline y BBDD Inversiones Inmoyield</b> (Google Sheet)<br>
+    Fecha de la fuente: <b id="sourceDate">13/07/2026</b> · Snapshot generado: <b id="genTime"></b>
+  </div>
+</header>
+
+<main>
+
+  <div class="kpis" id="kpiRow"></div>
+
+  <div class="flagbox" id="flagBox"></div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Capital invertido por partner</h3>
+      <div id="byPartner"></div>
+    </div>
+    <div class="panel">
+      <h3>Estado de plazos (cartera activa)</h3>
+      <div class="donut-wrap">
+        <svg id="donut" width="150" height="150" viewBox="0 0 150 150"></svg>
+        <div class="donut-list" id="donutList"></div>
+      </div>
+      <div class="status-legend">
+        <span><span class="dot green"></span>En plazo</span>
+        <span><span class="dot amber"></span>Próximo a vencer (≤60 días)</span>
+        <span><span class="dot red"></span>Retrasado vs. Est. Fin0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Capital invertido por tipología</h3>
+      <div id="byTipo"></div>
+    </div>
+    <div class="panel">
+      <h3>Capital por fase / vehículo</h3>
+      <div id="byFase"></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:22px;">
+    <h3>Cambios recientes</h3>
+    <div class="toolbar" style="margin-bottom:10px;">
+      <button id="btnWeek" class="tabbtn active">Última semana</button>
+      <button id="btnMonth" class="tabbtn">Último mes</button>
+      <span class="count" id="changeRange"></span>
+    </div>
+    <div id="changeList"></div>
+  </div>
+
+  <div class="panel" style="margin-bottom:22px;">
+    <h3>Tesorería y obligaciones de pago (pestaña "Obligaciones de Pago")</h3>
+    <div class="kpis" id="treasuryKpis" style="grid-template-columns:repeat(4,1fr);margin-bottom:16px;"></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:20px;">
+      <div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px;">Margen de maniobra mensual estimado</div>
+        <div id="treasuryChart"></div>
+      </div>
+      <div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px;">Próximos pagos concretos</div>
+        <div id="treasuryPayments" style="font-size:12px;"></div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:12px;">Fecha de referencia de esta previsión: 13-07-2026. Algunas líneas de la pestaña original no tenían etiqueta clara en la hoja de origen y se han omitido para no interpretar cifras sin contexto (p. ej. una partida de -120.000€ sin descripción, y la posición exacta de "Bafi -476.000€" en el calendario).</div>
+  </div>
+
+  <div class="panel" style="margin-bottom:22px;">
+    <h3>Detalle de operaciones en curso</h3>
+    <div class="toolbar">
+      <input type="text" id="search" placeholder="Buscar proyecto, partner, ubicación...">
+      <select id="fPartner"><option value="">Todos los partners</option></select>
+      <select id="fTipo"><option value="">Todas las tipologías</option></select>
+      <select id="fEstado">
+        <option value="">Todos los estados</option>
+        <option value="green">En plazo</option>
+        <option value="amber">Próximo a vencer</option>
+        <option value="red">Retrasado</option>
+      </select>
+      <span class="count" id="rowCount"></span>
+    </div>
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th data-k="proyecto">Proyecto</th>
+          <th data-k="partner">Partner</th>
+          <th data-k="tipologia">Tipología</th>
+          <th data-k="fase">Fase</th>
+          <th class="num" data-k="importe">Importe</th>
+          <th data-k="fechaInicio">Inicio</th>
+          <th data-k="estFin0">Est. liquidación</th>
+          <th data-k="_status">Plazo</th>
+          <th class="num" data-k="pctEjecucion">% Ejec.</th>
+          <th class="num" data-k="estTIR">TIR est.</th>
+          <th>Última actualización</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Fuente: Google Drive INMOYIELD → carpeta "00 INVERSIONES" → hoja <i>"Pipeline y BBDD Inversiones Inmoyield"</i>. Pestaña "BBDD INVERSIONES" (fecha 13-07-2026), filtrado por Estado = "Invertido" (excluye "En Estudio", "Pasada" y "Descarte") · Pestaña "Obligaciones de Pago" para el panel de tesorería.<br>
+  "Trinidad 67" aparece duplicada en el Sheet (Fase 1 y Fase 2 con datos idénticos) — se cuenta una sola vez en los totales de este dashboard hasta que se confirme con el equipo si son dos tramos reales o un error de captura.<br>
+  Este es un snapshot. Se actualiza según la periodicidad configurada (ver cabecera).
+</footer>
+
+<script>
+const DATA = __DATA_JSON__;
+const TREASURY = __TREASURY_JSON__;
+const HISTORY = __HISTORY_JSON__;
+
+const fmtEUR = n => n==null ? '—' : n.toLocaleString('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+const fmtPct = n => n==null ? '—' : n.toLocaleString('es-ES',{maximumFractionDigits:2})+'%';
+
+function statusOf(r){
+  if(r.retraso==null) return {k:'green', label:'En plazo', detail:''};
+  if(r.retraso>0) return {k:'red', label:'Retrasado', detail:Math.abs(r.retraso).toFixed(1)+' m'};
+  if(r.retraso>=-2) return {k:'amber', label:'Próximo a vencer', detail:Math.abs(r.retraso).toFixed(1)+' m'};
+  return {k:'green', label:'En plazo', detail:Math.abs(r.retraso).toFixed(1)+' m restantes'};
+}
+DATA.forEach(r=> r._status = statusOf(r).k);
+
+document.getElementById('genTime').textContent = new Date().toLocaleString('es-ES');
+
+// KPIs
+const total = DATA.reduce((s,r)=>s+(r.importe||0),0);
+const n = DATA.length;
+const wTIR = DATA.reduce((s,r)=>s+(r.importe||0)*(r.estTIR||0),0)/total;
+const delayed = DATA.filter(r=>r._status==='red').length;
+const soon = DATA.filter(r=>r._status==='amber').length;
+const partners = new Set(DATA.map(r=>r.partner)).size;
+
+const kpis = [
+  {label:'Capital invertido (activa)', value: fmtEUR(total), foot: n+' operaciones en curso'},
+  {label:'Nº operaciones activas', value: n, foot: partners+' partners distintos'},
+  {label:'TIR esperada ponderada', value: fmtPct(wTIR), foot:'ponderada por importe'},
+  {label:'Retrasadas vs. Est. Fin0', value: delayed, foot: fmtEUR(DATA.filter(r=>r._status==='red').reduce((s,r)=>s+r.importe,0))+' en riesgo de plazo', cls:'red'},
+  {label:'Próximas a vencer (≤60d)', value: soon, foot: fmtEUR(DATA.filter(r=>r._status==='amber').reduce((s,r)=>s+r.importe,0)), cls:'amber'},
+  {label:'En plazo', value: n-delayed-soon, foot: fmtPct((n-delayed-soon)/n*100)+' de la cartera', cls:'green'},
+];
+document.getElementById('kpiRow').innerHTML = kpis.map(k=>`
+  <div class="kpi">
+    <div class="label">${k.label}</div>
+    <div class="value ${k.cls||''}">${k.value}</div>
+    <div class="foot">${k.foot}</div>
+  </div>`).join('');
+
+// Flag box
+const flagged = DATA.filter(r=>r.flags && r.flags.length);
+document.getElementById('flagBox').innerHTML = flagged.length
+  ? `<b>⚠ A validar (${flagged.length}):</b><br>` + flagged.map(f=>`• <b>${f.proyecto}</b> (${f.fase}, ${f.partner}): ${f.flags.join(' ')}`).join('<br>')
+  : '';
+if(!flagged.length) document.getElementById('flagBox').style.display='none';
+
+// group helper
+function groupBy(key){
+  const m = {};
+  DATA.forEach(r=>{ const k=r[key]||'Sin dato'; m[k]=(m[k]||0)+(r.importe||0); });
+  return Object.entries(m).sort((a,b)=>b[1]-a[1]);
+}
+function renderBars(el, groups){
+  const max = Math.max(...groups.map(g=>g[1]));
+  document.getElementById(el).innerHTML = groups.map(([k,v])=>`
+    <div class="bar-row">
+      <div class="lbl" title="${k}">${k}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(v/max*100).toFixed(1)}%"></div></div>
+      <div class="bar-val">${fmtEUR(v)}</div>
+    </div>`).join('');
+}
+renderBars('byPartner', groupBy('partner'));
+renderBars('byTipo', groupBy('tipologia'));
+renderBars('byFase', groupBy('fase'));
+
+// Donut
+const statusCount = {green:0, amber:0, red:0};
+const statusAmt = {green:0, amber:0, red:0};
+DATA.forEach(r=>{ statusCount[r._status]++; statusAmt[r._status]+=r.importe||0; });
+const colors = {green:'#1f9d55', amber:'#d99a2b', red:'#c0392b'};
+const labels = {green:'En plazo', amber:'Próximo a vencer', red:'Retrasado'};
+(function drawDonut(){
+  const svg = document.getElementById('donut');
+  const cx=75, cy=75, r=55, rw=22;
+  let acc = -90;
+  const order = ['green','amber','red'];
+  order.forEach(k=>{
+    const frac = statusCount[k]/n;
+    if(frac<=0) return;
+    const angle = frac*360;
+    const large = angle>180?1:0;
+    const x1 = cx + r*Math.cos(acc*Math.PI/180);
+    const y1 = cy + r*Math.sin(acc*Math.PI/180);
+    const end = acc+angle;
+    const x2 = cx + r*Math.cos(end*Math.PI/180);
+    const y2 = cy + r*Math.sin(end*Math.PI/180);
+    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d', `M${x1},${y1} A${r},${r} 0 ${large} 1 ${x2},${y2}`);
+    path.setAttribute('stroke', colors[k]);
+    path.setAttribute('stroke-width', rw);
+    path.setAttribute('fill','none');
+    svg.appendChild(path);
+    acc = end;
+  });
+  const t1 = document.createElementNS('http://www.w3.org/2000/svg','text');
+  t1.setAttribute('x',cx); t1.setAttribute('y',cy-2); t1.setAttribute('text-anchor','middle');
+  t1.setAttribute('font-size','20'); t1.setAttribute('font-weight','700'); t1.setAttribute('fill','#0b1f3a');
+  t1.textContent = n;
+  svg.appendChild(t1);
+  const t2 = document.createElementNS('http://www.w3.org/2000/svg','text');
+  t2.setAttribute('x',cx); t2.setAttribute('y',cy+14); t2.setAttribute('text-anchor','middle');
+  t2.setAttribute('font-size','9'); t2.setAttribute('fill','#6b7688');
+  t2.textContent = 'operaciones';
+  svg.appendChild(t2);
+})();
+document.getElementById('donutList').innerHTML = ['green','amber','red'].map(k=>`
+  <div><span><span class="dot ${k}"></span>${labels[k]}</span><span>${statusCount[k]} · ${fmtEUR(statusAmt[k])}</span></div>
+`).join('');
+
+// Filters
+const selPartner = document.getElementById('fPartner');
+const selTipo = document.getElementById('fTipo');
+[...new Set(DATA.map(r=>r.partner))].sort().forEach(p=>selPartner.innerHTML+=`<option value="${p}">${p}</option>`);
+[...new Set(DATA.map(r=>r.tipologia))].sort().forEach(t=>selTipo.innerHTML+=`<option value="${t}">${t}</option>`);
+
+let sortKey='importe', sortDir=-1;
+
+function renderTable(){
+  const q = document.getElementById('search').value.toLowerCase();
+  const fp = selPartner.value, ft = selTipo.value, fe = document.getElementById('fEstado').value;
+  let rows = DATA.filter(r=>{
+    if(fp && r.partner!==fp) return false;
+    if(ft && r.tipologia!==ft) return false;
+    if(fe && r._status!==fe) return false;
+    if(q){
+      const hay = (r.proyecto+' '+r.partner+' '+r.provincia+' '+r.municipio).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+  rows.sort((a,b)=>{
+    let va=a[sortKey], vb=b[sortKey];
+    if(sortKey==='_status'){ const ord={red:0,amber:1,green:2}; va=ord[a._status]; vb=ord[b._status]; }
+    if(typeof va==='string') return sortDir*va.localeCompare(vb||'');
+    return sortDir*((va||0)-(vb||0));
+  });
+  document.getElementById('rowCount').textContent = rows.length+' de '+n+' operaciones · '+fmtEUR(rows.reduce((s,r)=>s+r.importe,0));
+  document.getElementById('tbody').innerHTML = rows.map(r=>{
+    const st = statusOf(r);
+    const hasFlags = r.flags && r.flags.length;
+    return `<tr class="${hasFlags?'flagged':''}">
+      <td><div class="proj">${r.proyecto}</div><div class="sub-proj">${r.municipio||'—'}${r.provincia?', '+r.provincia:''}</div></td>
+      <td>${r.partner||'—'}</td>
+      <td>${r.tipologia||'—'}</td>
+      <td>${r.fase||'—'}</td>
+      <td class="num">${fmtEUR(r.importe)}</td>
+      <td>${r.fechaInicio||'—'}</td>
+      <td>${r.estFin0||'—'}${r.estFin1 && r.estFin1!==r.estFin0 ? ' → '+r.estFin1 : ''}</td>
+      <td><span class="badge ${st.k}">${st.label}${st.detail?' · '+st.detail:''}</span></td>
+      <td class="num"><span class="progress"><i style="width:${Math.min(r.pctEjecucion||0,100)}%"></i></span>${r.pctEjecucion!=null?r.pctEjecucion.toFixed(0)+'%':'—'}</td>
+      <td class="num tir">${fmtPct(r.estTIR)}</td>
+      <td class="comment">${r.comentarios||''}${hasFlags?'<br><b style="color:#c0392b">⚠ '+r.flags.join(' ')+'</b>':''}</td>
+    </tr>`;
+  }).join('');
+}
+
+// Changelog panel
+const tagLabels = {nuevo_detectado:'Nuevo', importe:'Importe', comentario:'Update', tir:'TIR', ya_no_activa:'Salida'};
+function renderChanges(windowKey){
+  document.getElementById('btnWeek').classList.toggle('active', windowKey==='semana');
+  document.getElementById('btnMonth').classList.toggle('active', windowKey==='mes');
+  const w = HISTORY[windowKey];
+  const rango = w.desde ? `${w.desde} → ${w.hasta}` : `hasta ${w.hasta}`;
+  document.getElementById('changeRange').textContent = rango;
+  if(!w.cambios.length){
+    document.getElementById('changeList').innerHTML = `<div style="color:var(--muted);font-size:12.5px;padding:10px 0;">${w.nota || 'Sin cambios detectados en este periodo.'}</div>`;
+    return;
+  }
+  document.getElementById('changeList').innerHTML = w.cambios.map(c=>`
+    <div class="change-row">
+      <div class="change-tag ${c.tipo}">${tagLabels[c.tipo]||c.tipo}</div>
+      <div>
+        <b>${c.proyecto}</b> <span style="color:var(--muted);">(${c.fase}, ${c.partner})</span> — ${c.detalle}
+        ${c.nota ? `<div class="change-note">${c.nota}</div>` : ''}
+      </div>
+    </div>`).join('') + (w.nota ? `<div class="change-note" style="margin-top:8px;">${w.nota}</div>` : '');
+}
+document.getElementById('btnWeek').addEventListener('click', ()=>renderChanges('semana'));
+document.getElementById('btnMonth').addEventListener('click', ()=>renderChanges('mes'));
+renderChanges('semana');
+
+// Treasury panel
+(function renderTreasury(){
+  const kpis = [
+    {label:'Caja disponible hoy', value: fmtEUR(TREASURY.cajaDisponible), foot:'13-07-2026'},
+    {label:'Total disponible (con estimaciones)', value: fmtEUR(TREASURY.cajaDisponible + TREASURY.frPendiente + TREASURY.liqEst30d), foot:'Caja + FR pendiente + liq. est. 30 días'},
+    {label:'Mes con déficit proyectado', value: TREASURY.mesDeficit, foot: fmtEUR(TREASURY.margenMensual.find(m=>m.mes===TREASURY.mesDeficit).valor)+' de margen', cls:'red'},
+    {label:'Obligaciones fijas identificadas', value: fmtEUR(TREASURY.obligacionesFijas), foot:'EIC + Bafi'},
+  ];
+  document.getElementById('treasuryKpis').innerHTML = kpis.map(k=>`
+    <div class="kpi">
+      <div class="label">${k.label}</div>
+      <div class="value ${k.cls||''}">${k.value}</div>
+      <div class="foot">${k.foot}</div>
+    </div>`).join('');
+
+  const maxAbs = Math.max(...TREASURY.margenMensual.map(m=>Math.abs(m.valor)));
+  document.getElementById('treasuryChart').innerHTML = TREASURY.margenMensual.map(m=>{
+    const neg = m.valor < 0;
+    const pct = Math.abs(m.valor)/maxAbs*100;
+    return `<div class="bar-row">
+      <div class="lbl">${m.mes}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct.toFixed(1)}%;background:${neg?'var(--red)':'var(--green)'}"></div></div>
+      <div class="bar-val" style="color:${neg?'var(--red)':'var(--green)'}">${fmtEUR(m.valor)}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('treasuryPayments').innerHTML = TREASURY.pagos.map(p=>`
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px dashed var(--border);">
+      <span>${p.fecha ? '<b>'+p.fecha+'</b> · ' : ''}${p.concepto}</span>
+      <span style="color:var(--red);font-variant-numeric:tabular-nums;">${fmtEUR(p.importe)}</span>
+    </div>`).join('');
+})();
+
+document.getElementById('search').addEventListener('input', renderTable);
+selPartner.addEventListener('change', renderTable);
+selTipo.addEventListener('change', renderTable);
+document.getElementById('fEstado').addEventListener('change', renderTable);
+document.querySelectorAll('thead th').forEach(th=>{
+  th.addEventListener('click', ()=>{
+    const k = th.dataset.k;
+    if(!k) return;
+    if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir=1;}
+    renderTable();
+  });
+});
+
+renderTable();
+</script>
+</body>
+</html>

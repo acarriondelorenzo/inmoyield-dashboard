@@ -1,0 +1,67 @@
+{
+ "log": [
+  {
+   "fecha": "2026-07-13",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "WIP 19 viv. Mora de Ebro",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Aparece en cartera activa por 331.850 €",
+     "nota": "No se puede confirmar si es una incorporación de esta semana o si ya existía y no se capturó antes por un fallo de lectura ahora corregido."
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "WIP 19 viv. Mora de Ebro",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Aparece en cartera activa por 150.000 €",
+     "nota": "No se puede confirmar si es una incorporación de esta semana o si ya existía y no se capturó antes por un fallo de lectura ahora corregido."
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "Carlet (15 viv.)",
+     "fase": "FASE 2",
+     "partner": "PropHero",
+     "detalle": "Importe invertido: 1.189.976 € → 1.294.004 €"
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "Edif. Pantoja (Fase II)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Importe invertido: 50.000 € → 100.000 €"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Pantoja (Fase II)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"tramo 1: 22.06  /  tramo 2: 14/07\""
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "St. Jaume Enveja 11 viv.",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Importe invertido: 250.000 € → 500.000 €"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"13.07 Oferta de compra recibida. Se ha hecho contraoferta a ver si la aceptan.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "C. Peñalver 94",
+     "fase": "FASE 2",
+     "partner": "Casas Unique",
+     "detalle": "Nuevo comentario: \"13.07 Informe Actualización\""
+    }
+   ]
+  }
+ ]
+}
