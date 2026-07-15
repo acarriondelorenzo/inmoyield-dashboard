@@ -271,7 +271,7 @@
   "estTIR": 20.0,
   "estROI": 10.0,
   "meses": "5",
-  "comentarios": "15.06 Subsanaciones para LPO. Una vezk obtenida. 60 días max para escrituras de PH.",
+  "comentarios": "15.06 Subsanaciones para LPO. Una vez obtenida. 60 días max para escrituras de PH.",
   "flags": []
  },
  {
@@ -499,31 +499,6 @@
   "estROI": 35.0,
   "meses": "23",
   "comentarios": "17.975,34 € de intereses demora (clausula 1)",
-  "flags": []
- },
- {
-  "proyecto": "Xátiva - 29 Apartamentos",
-  "fase": "FASE 1",
-  "sl": "Inmoyield 1",
-  "provincia": "Valencia",
-  "municipio": "Xátiva",
-  "tipoActivo": "Vivienda",
-  "tipologia": "Flipping",
-  "canal": "Plataforma",
-  "partner": "Domoblock",
-  "formato": "Deuda",
-  "contrato": "Préstamo Participativo",
-  "importe": 100000.0,
-  "fechaInicio": "2025-12-22",
-  "fechaFin": null,
-  "estFin0": "2026-12",
-  "estFin1": "2026-12",
-  "retraso": -4.7,
-  "pctEjecucion": 59.3,
-  "estTIR": 14.78,
-  "estROI": 14.78,
-  "meses": "11",
-  "comentarios": "",
   "flags": []
  },
  {

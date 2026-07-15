@@ -1,85 +1,33 @@
 {
- "cajaDisponible": 455955,
- "frPendiente": 500000,
- "liqEst30d": 1200000,
- "obligacionesFijas": 596000,
- "mesDeficit": "Noviembre",
- "margenMensual": [
-  {
-   "mes": "Agosto",
-   "valor": 730886
-  },
-  {
-   "mes": "Septiembre",
-   "valor": 159865
-  },
-  {
-   "mes": "Octubre",
-   "valor": 94848
-  },
-  {
-   "mes": "Noviembre",
-   "valor": -240466
-  },
-  {
-   "mes": "Diciembre",
-   "valor": 0
-  },
-  {
-   "mes": "Enero",
-   "valor": 0
-  }
- ],
+ "cajaDisponible": 133410.0,
+ "frPendiente": 500000.0,
+ "liqEst30d": 1200000.0,
+ "obligacionesFijas": {
+  "EIC": -120000.0,
+  "Bafi": -476000.0
+ },
+ "margenMensual": {
+  "Agosto": 730726.0,
+  "Septiembre": 159705.0,
+  "Octubre": 94688.0,
+  "Noviembre": -240626.0
+ },
  "pagos": [
   {
-   "fecha": "15-07",
-   "concepto": "St. Jaume (2/2)",
-   "importe": -250000
-  },
-  {
-   "fecha": "30-07",
-   "concepto": "Carlet - pago Julio",
-   "importe": -162031
-  },
-  {
    "fecha": "25-08",
-   "concepto": "Carlet - Agosto",
-   "importe": -104028
+   "concepto": "Carlet Agosto",
+   "importe": -104028.0
   },
   {
    "fecha": "30-08",
    "concepto": "Escritura Esquivias",
-   "importe": -241625
+   "importe": -241625.0
   },
   {
-   "fecha": null,
-   "concepto": "Teruel",
-   "importe": -60000
-  },
-  {
-   "fecha": null,
-   "concepto": "Favara",
-   "importe": -230000
-  },
-  {
-   "fecha": null,
-   "concepto": "Carlet - Octubre",
-   "importe": -65017
-  },
-  {
-   "fecha": null,
-   "concepto": "Carlet - Noviembre",
-   "importe": -52014
-  },
-  {
-   "fecha": null,
-   "concepto": "Teruel CV 45%",
-   "importe": -283300
-  },
-  {
-   "fecha": null,
-   "concepto": "Devolución Nacho",
-   "importe": -475000
+   "fecha": "30-07",
+   "concepto": "Carlet Pago Julio",
+   "importe": -162031.0
   }
- ]
+ ],
+ "fechaReferencia": "2026-07-15"
 }

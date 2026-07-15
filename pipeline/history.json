@@ -74,6 +74,25 @@
      "detalle": "Nuevo comentario: \"15.06 Subsanaciones para LPO. Una vezk obtenida. 60 días max para escrituras de PH.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-07-15",
+   "cambios": [
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Xátiva - 29 Apartamentos",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Ya no aparece como 'Invertido' (antes 100.000 €)"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Pantoja (Fase II)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"15.06 Subsanaciones para LPO. Una vez obtenida. 60 días max para escrituras de PH.\""
+    }
+   ]
   }
  ]
 }
