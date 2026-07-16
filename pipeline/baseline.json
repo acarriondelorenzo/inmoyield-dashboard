@@ -246,7 +246,7 @@
   "estTIR": 20.0,
   "estROI": 10.0,
   "meses": "5",
-  "comentarios": "15.06 Subsanaciones para LPO. Una vezh obtenida. 60 días max para escrituras de PH.",
+  "comentarios": "15.06 Subsanaciones para LPO. Una vez obtenida. 60 días max para escrituras de PH.",
   "flags": []
  },
  {
@@ -321,7 +321,7 @@
   "estTIR": 42.5,
   "estROI": 16.52,
   "meses": "5",
-  "comentarios": "15.06 Deudor quiere comprar por 20-25% más que inversión. Tanto si se vende como si no, saldremos antes de otroño de la operación.",
+  "comentarios": "15.06 Deudor quiere comprar por 20-25% más que inversión. Tanto si se vende como si no, saldremos antes de otoño de la operación.",
   "flags": []
  },
  {
@@ -397,6 +397,31 @@
   "estROI": 6.81,
   "meses": "5",
   "comentarios": "10.06 Se ha ajustado el precio y se ha incrementado el numero de visitas de forma inmediata, la semana pasada se pasaron 3 visitas que les ha gustado y estamos pendiente de recibir alguna oferta de esas visitas.",
+  "flags": []
+ },
+ {
+  "proyecto": "Joselito 23",
+  "fase": "FASE 1",
+  "sl": "Inmoyield 1",
+  "provincia": "Madrid",
+  "municipio": "Madrid",
+  "tipoActivo": "Vivienda",
+  "tipologia": "Flipping",
+  "canal": "Plataforma",
+  "partner": "Velzia",
+  "formato": "Deuda",
+  "contrato": "Préstamo Participativo",
+  "importe": 120000.0,
+  "fechaInicio": "2024-08-02",
+  "fechaFin": null,
+  "estFin0": "2025-05",
+  "estFin1": "2028-06",
+  "retraso": 14.7,
+  "pctEjecucion": 50.89,
+  "estTIR": 39.83,
+  "estROI": 32.23,
+  "meses": "9",
+  "comentarios": "",
   "flags": []
  },
  {

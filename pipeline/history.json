@@ -189,6 +189,32 @@
      "detalle": "Nuevo comentario: \"Todo vendido (salvo 2 unidades esperando para max. bº). Obra al 80%\""
     }
    ]
+  },
+  {
+   "fecha": "2026-07-16",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Joselito 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Aparece en cartera activa por 120.000 €"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Pantoja (Fase II)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"15.06 Subsanaciones para LPO. Una vez obtenida. 60 días max para escrituras de PH.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edificio Puertollano (6 viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"15.06 Deudor quiere comprar por 20-25% más que inversión. Tanto si se vende como si no, saldremos antes de otoño de la operación.\""
+    }
+   ]
   }
  ]
 }
