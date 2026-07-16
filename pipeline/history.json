@@ -93,6 +93,102 @@
      "detalle": "Nuevo comentario: \"15.06 Subsanaciones para LPO. Una vez obtenida. 60 días max para escrituras de PH.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-07-16",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Equity de Napala",
+     "fase": "FASE 2",
+     "partner": "Napala",
+     "detalle": "Aparece en cartera activa por 822.032 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Equity de Napala",
+     "fase": "FASE 1",
+     "partner": "Napala",
+     "detalle": "Aparece en cartera activa por 520.173 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Xátiva - 29 Apartamentos",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Aparece en cartera activa por 100.000 €"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Joselito 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Ya no aparece como 'Invertido' (antes 120.000 €)"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "PDL Menendez Pidal",
+     "fase": "FASE 2",
+     "partner": "Velzia",
+     "detalle": "Ya no aparece como 'Invertido' (antes 800.000 €)"
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "San Lucas 5",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Importe invertido: 583.360 € → 63.187 €"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "San Lucas 5",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Nuevo comentario: \"520.173 € cambiados por Eq. de Napala\""
+    },
+    {
+     "tipo": "tir",
+     "proyecto": "San Lucas 5",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "TIR estimada: 15.82% → 0.0%"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Pantoja (Fase II)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"15.06 Subsanaciones para LPO. Una vezh obtenida. 60 días max para escrituras de PH.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edificio Puertollano (6 viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"15.06 Deudor quiere comprar por 20-25% más que inversión. Tanto si se vende como si no, saldremos antes de otroño de la operación.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Lofts Getafe (14)",
+     "fase": "FASE 2",
+     "partner": "Make Kubo",
+     "detalle": "Nuevo comentario: \"15.07 Ante resistencia ayuntamiento para facilitar segregación están reconvirtiendo en apartahotel con 1 de 3 portales vendidos. Proponen convertir demora en ordinario hasta Dic. y liquidarán antes si hace falta con ingresos de otros proyectos (villa vendida en Javea).\""
+    },
+    {
+     "tipo": "tir",
+     "proyecto": "Downtown (Tarragona)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "TIR estimada: 75.0% → 45.0%"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Loeches 29 viviendas",
+     "fase": "FASE 1",
+     "partner": "Sagelliv",
+     "detalle": "Nuevo comentario: \"Todo vendido (salvo 2 unidades esperando para max. bº). Obra al 80%\""
+    }
+   ]
   }
  ]
 }
