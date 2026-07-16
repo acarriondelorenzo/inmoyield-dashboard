@@ -268,12 +268,13 @@ def write_snapshot(snapshots_dir, date_str, data_rows, treasury, keep_days=35):
     return kept
 
 
-def render_dashboard(template_path, out_path, data_rows, treasury, history_public):
+def render_dashboard(template_path, out_path, data_rows, treasury, history_public, source_date_str):
     with open(template_path, encoding='utf-8') as f:
         html = f.read()
     html = html.replace('__DATA_JSON__', json.dumps(data_rows, ensure_ascii=False))
     html = html.replace('__TREASURY_JSON__', json.dumps(treasury, ensure_ascii=False))
     html = html.replace('__HISTORY_JSON__', json.dumps(history_public, ensure_ascii=False))
+    html = html.replace('__SOURCE_DATE__', source_date_str)
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(html)
 
@@ -324,7 +325,8 @@ if __name__ == '__main__':
     except FileNotFoundError:
         treasury = {}
 
-    render_dashboard(template_html, out_html, new_rows, treasury, history_public)
+    source_date_str = datetime.date.today().strftime('%d/%m/%Y')
+    render_dashboard(template_html, out_html, new_rows, treasury, history_public, source_date_str)
     json.dump(new_rows, open(out_baseline, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump(history_full, open(out_history, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 

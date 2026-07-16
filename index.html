@@ -96,7 +96,7 @@
   </div>
   <div class="meta">
     Datos extraídos de <b>Pipeline y BBDD Inversiones Inmoyield</b> (Google Sheet)<br>
-    Fecha de la fuente: <b id="sourceDate">13/07/2026</b> · Snapshot generado: <b id="genTime"></b><br>
+    Fecha de la fuente: <b id="sourceDate">16/07/2026</b> · Snapshot generado: <b id="genTime"></b><br>
     <label>Ver día anterior:
       <select id="snapshotPicker" style="margin-left:6px;padding:3px 6px;border-radius:5px;border:none;font-size:12px;">
         <option value="">Hoy (en vivo)</option>
@@ -169,7 +169,7 @@
         <div id="treasuryPayments" style="font-size:12px;"></div>
       </div>
     </div>
-    <div style="font-size:11px;color:var(--muted);margin-top:12px;">Fecha de referencia de esta previsión: 13-07-2026. Algunas líneas de la pestaña original no tenían etiqueta clara en la hoja de origen y se han omitido para no interpretar cifras sin contexto (p. ej. una partida de -120.000€ sin descripción, y la posición exacta de "Bafi -476.000€" en el calendario).</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:12px;" id="treasuryRefNote">Fecha de referencia de esta previsión: <span id="treasuryRefDate">—</span>. Algunas líneas de la pestaña original no tenían etiqueta clara en la hoja de origen y se han omitido para no interpretar cifras sin contexto (p. ej. una partida de -120.000€ sin descripción, y la posición exacta de "Bafi -476.000€" en el calendario).</div>
   </div>
 
   <div class="panel" style="margin-bottom:22px;">
@@ -211,7 +211,7 @@
 </main>
 
 <footer>
-  Fuente: Google Drive INMOYIELD → carpeta "00 INVERSIONES" → hoja <i>"Pipeline y BBDD Inversiones Inmoyield"</i>. Pestaña "BBDD INVERSIONES" (fecha 13-07-2026), filtrado por Estado = "Invertido" (excluye "En Estudio", "Pasada" y "Descarte") · Pestaña "Obligaciones de Pago" para el panel de tesorería.<br>
+  Fuente: Google Drive INMOYIELD → carpeta "00 INVERSIONES" → hoja <i>"Pipeline y BBDD Inversiones Inmoyield"</i>. Pestaña "BBDD INVERSIONES" (lectura del 16/07/2026), filtrado por Estado = "Invertido" (excluye "En Estudio", "Pasada" y "Descarte") · Pestaña "Obligaciones de Pago" para el panel de tesorería.<br>
   "Trinidad 67" aparece duplicada en el Sheet (Fase 1 y Fase 2 con datos idénticos) — se cuenta una sola vez en los totales de este dashboard hasta que se confirme con el equipo si son dos tramos reales o un error de captura.<br>
   Este es un snapshot. Se actualiza según la periodicidad configurada (ver cabecera).
 </footer>
@@ -466,6 +466,8 @@ function renderTreasuryPanel(t){
       <span>${p.fecha ? '<b>'+p.fecha+'</b> · ' : ''}${p.concepto}</span>
       <span style="color:var(--red);font-variant-numeric:tabular-nums;">${fmtEUR(p.importe)}</span>
     </div>`).join('') : '<div style="color:var(--muted);font-size:12.5px;">Sin pagos concretos detectados.</div>';
+
+  document.getElementById('treasuryRefDate').textContent = t.fechaReferencia || '—';
 }
 
 document.getElementById('search').addEventListener('input', renderTable);
