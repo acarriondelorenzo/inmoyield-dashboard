@@ -61,14 +61,20 @@ def parse_treasury(csv_path):
             if c in MESES and c not in month_names_found:
                 month_names_found.append(c)
 
-    margen_mensual = {}
+    margen_mensual = []
     if margen_vals:
         # heuristic: the months line up starting from the 2nd month found
         # (first month is usually already mid-way through and excluded from the
         # "M de Maniobra" forward-looking figures in this sheet's convention)
         candidate_months = month_names_found[1:1 + len(margen_vals)]
         if len(candidate_months) == len(margen_vals):
-            margen_mensual = dict(zip(candidate_months, margen_vals))
+            margen_mensual = [{"mes": m, "valor": v} for m, v in zip(candidate_months, margen_vals)]
+
+    mes_deficit = None
+    if margen_mensual:
+        peor = min(margen_mensual, key=lambda m: m['valor'])
+        if peor['valor'] < 0:
+            mes_deficit = peor['mes']
 
     # concrete upcoming payments: any row with a DD-MM date anchor in an early
     # column, followed by a label and a value
@@ -83,12 +89,15 @@ def parse_treasury(csv_path):
                         pagos.append({"fecha": cell.strip(), "concepto": rest[0].strip(), "importe": val})
                 break
 
+    obligaciones_fijas = (abs(eic) if eic is not None else 0) + (abs(bafi) if bafi is not None else 0)
+
     result = {
         "cajaDisponible": caja,
         "frPendiente": fr,
         "liqEst30d": liq30,
-        "obligacionesFijas": {"EIC": eic, "Bafi": bafi},
+        "obligacionesFijas": obligaciones_fijas,
         "margenMensual": margen_mensual,
+        "mesDeficit": mes_deficit,
         "pagos": pagos,
         "fechaReferencia": datetime.date.today().isoformat(),
     }
@@ -102,6 +111,10 @@ def validate(t):
         reasons.append("No se pudo localizar 'Liq. Est. 30 días' en la pestaña.")
     if not t.get('margenMensual'):
         reasons.append("No se pudo construir el margen de maniobra mensual (formato de la pestaña puede haber cambiado).")
+    if t.get('mesDeficit') is None and t.get('margenMensual'):
+        # not necessarily an error (portfolio might have no deficit month at all),
+        # but flag it for visibility since it's unusual
+        pass
     if not t.get('pagos'):
         reasons.append("No se detectaron pagos concretos con fecha.")
     return (len(reasons) == 0), reasons
