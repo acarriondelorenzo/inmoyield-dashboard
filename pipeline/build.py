@@ -1,4 +1,4 @@
-import csv, json, sys, datetime
+import csv, json, sys, datetime, os
 from collections import defaultdict, Counter
 
 # (expected label as it appears in row 4 of the sheet export, internal key)
@@ -238,6 +238,36 @@ def update_history(history, changes, today_str):
     return result, history
 
 
+def write_snapshot(snapshots_dir, date_str, data_rows, treasury, keep_days=35):
+    """Write today's dated snapshot (data + treasury) and refresh the index of
+    available dates, pruning anything older than `keep_days`. Snapshots live at
+    the repo root (served as static files by Vercel) so the dashboard can fetch
+    a past day's JSON directly, e.g. /snapshots/2026-07-16.json."""
+    os.makedirs(snapshots_dir, exist_ok=True)
+    snap = {"fecha": date_str, "data": data_rows, "treasury": treasury}
+    with open(os.path.join(snapshots_dir, f"{date_str}.json"), 'w', encoding='utf-8') as f:
+        json.dump(snap, f, ensure_ascii=False)
+
+    cutoff = datetime.date.today() - datetime.timedelta(days=keep_days)
+    kept = []
+    for fname in os.listdir(snapshots_dir):
+        if not fname.endswith('.json') or fname == 'index.json':
+            continue
+        d = fname[:-5]
+        try:
+            dd = datetime.date.fromisoformat(d)
+        except ValueError:
+            continue
+        if dd < cutoff:
+            os.remove(os.path.join(snapshots_dir, fname))
+        else:
+            kept.append(d)
+    kept.sort()
+    with open(os.path.join(snapshots_dir, 'index.json'), 'w', encoding='utf-8') as f:
+        json.dump(kept, f, ensure_ascii=False)
+    return kept
+
+
 def render_dashboard(template_path, out_path, data_rows, treasury, history_public):
     with open(template_path, encoding='utf-8') as f:
         html = f.read()
@@ -249,9 +279,10 @@ def render_dashboard(template_path, out_path, data_rows, treasury, history_publi
 
 
 if __name__ == '__main__':
-    # Usage: build.py <live_csv> <template_html> <baseline_json> <history_json> <treasury_json> <out_html> <out_baseline> <out_history>
+    # Usage: build.py <live_csv> <template_html> <baseline_json> <history_json> <treasury_json> <out_html> <out_baseline> <out_history> <snapshots_dir>
     (live_csv, template_html, baseline_json, history_json, treasury_json,
      out_html, out_baseline, out_history) = sys.argv[1:9]
+    snapshots_dir = sys.argv[9] if len(sys.argv) > 9 else None
 
     today_str = datetime.date.today().isoformat()
 
@@ -297,5 +328,11 @@ if __name__ == '__main__':
     json.dump(new_rows, open(out_baseline, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump(history_full, open(out_history, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
+    snap_count = None
+    if snapshots_dir:
+        kept = write_snapshot(snapshots_dir, today_str, new_rows, treasury)
+        snap_count = len(kept)
+
     total = sum(r['importe'] or 0 for r in new_rows)
-    print("OK", "rows_total_sheet=", total_rows_seen, "activas=", len(new_rows), "total=", round(total, 2), "cambios=", len(changes))
+    print("OK", "rows_total_sheet=", total_rows_seen, "activas=", len(new_rows), "total=", round(total, 2),
+          "cambios=", len(changes), "snapshots_guardados=", snap_count)

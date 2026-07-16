@@ -96,9 +96,19 @@
   </div>
   <div class="meta">
     Datos extraídos de <b>Pipeline y BBDD Inversiones Inmoyield</b> (Google Sheet)<br>
-    Fecha de la fuente: <b id="sourceDate">13/07/2026</b> · Snapshot generado: <b id="genTime"></b>
+    Fecha de la fuente: <b id="sourceDate">13/07/2026</b> · Snapshot generado: <b id="genTime"></b><br>
+    <label>Ver día anterior:
+      <select id="snapshotPicker" style="margin-left:6px;padding:3px 6px;border-radius:5px;border:none;font-size:12px;">
+        <option value="">Hoy (en vivo)</option>
+      </select>
+    </label>
   </div>
 </header>
+
+<div id="snapshotBanner" style="display:none;align-items:center;gap:14px;background:#fff7e8;border-bottom:1px solid #f0d9a3;color:#6b5117;padding:9px 36px;font-size:12.5px;">
+  <span id="snapshotBannerText"></span>
+  <button id="btnBackToday" style="margin-left:auto;background:var(--navy);color:#fff;border:none;padding:5px 14px;border-radius:6px;font-size:12px;cursor:pointer;">Volver a hoy (en vivo)</button>
+</div>
 
 <main>
 
@@ -220,47 +230,58 @@ function statusOf(r){
   if(r.retraso>=-2) return {k:'amber', label:'Próximo a vencer', detail:Math.abs(r.retraso).toFixed(1)+' m'};
   return {k:'green', label:'En plazo', detail:Math.abs(r.retraso).toFixed(1)+' m restantes'};
 }
-DATA.forEach(r=> r._status = statusOf(r).k);
 
 document.getElementById('genTime').textContent = new Date().toLocaleString('es-ES');
 
-// KPIs
-const total = DATA.reduce((s,r)=>s+(r.importe||0),0);
-const n = DATA.length;
-const wTIR = DATA.reduce((s,r)=>s+(r.importe||0)*(r.estTIR||0),0)/total;
-const delayed = DATA.filter(r=>r._status==='red').length;
-const soon = DATA.filter(r=>r._status==='amber').length;
-const partners = new Set(DATA.map(r=>r.partner)).size;
+// Everything below is parameterized by `dataset` so it can be re-rendered either
+// with the live DATA or with a historical snapshot loaded from /snapshots/*.json.
+let CURRENT_DATA = DATA;
+let CURRENT_N = 0;
+const selPartner = document.getElementById('fPartner');
+const selTipo = document.getElementById('fTipo');
+let sortKey='importe', sortDir=-1;
+const colors = {green:'#1f9d55', amber:'#d99a2b', red:'#c0392b'};
+const statusLabels = {green:'En plazo', amber:'Próximo a vencer', red:'Retrasado'};
 
-const kpis = [
-  {label:'Capital invertido (activa)', value: fmtEUR(total), foot: n+' operaciones en curso'},
-  {label:'Nº operaciones activas', value: n, foot: partners+' partners distintos'},
-  {label:'TIR esperada ponderada', value: fmtPct(wTIR), foot:'ponderada por importe'},
-  {label:'Retrasadas vs. Est. Fin0', value: delayed, foot: fmtEUR(DATA.filter(r=>r._status==='red').reduce((s,r)=>s+r.importe,0))+' en riesgo de plazo', cls:'red'},
-  {label:'Próximas a vencer (≤60d)', value: soon, foot: fmtEUR(DATA.filter(r=>r._status==='amber').reduce((s,r)=>s+r.importe,0)), cls:'amber'},
-  {label:'En plazo', value: n-delayed-soon, foot: fmtPct((n-delayed-soon)/n*100)+' de la cartera', cls:'green'},
-];
-document.getElementById('kpiRow').innerHTML = kpis.map(k=>`
-  <div class="kpi">
-    <div class="label">${k.label}</div>
-    <div class="value ${k.cls||''}">${k.value}</div>
-    <div class="foot">${k.foot}</div>
-  </div>`).join('');
+function renderKPIs(dataset){
+  const total = dataset.reduce((s,r)=>s+(r.importe||0),0);
+  const n = dataset.length;
+  const wTIR = n ? dataset.reduce((s,r)=>s+(r.importe||0)*(r.estTIR||0),0)/(total||1) : 0;
+  const delayed = dataset.filter(r=>r._status==='red').length;
+  const soon = dataset.filter(r=>r._status==='amber').length;
+  const partners = new Set(dataset.map(r=>r.partner)).size;
+  const kpis = [
+    {label:'Capital invertido (activa)', value: fmtEUR(total), foot: n+' operaciones en curso'},
+    {label:'Nº operaciones activas', value: n, foot: partners+' partners distintos'},
+    {label:'TIR esperada ponderada', value: fmtPct(wTIR), foot:'ponderada por importe'},
+    {label:'Retrasadas vs. Est. Fin0', value: delayed, foot: fmtEUR(dataset.filter(r=>r._status==='red').reduce((s,r)=>s+r.importe,0))+' en riesgo de plazo', cls:'red'},
+    {label:'Próximas a vencer (≤60d)', value: soon, foot: fmtEUR(dataset.filter(r=>r._status==='amber').reduce((s,r)=>s+r.importe,0)), cls:'amber'},
+    {label:'En plazo', value: n-delayed-soon, foot: n ? fmtPct((n-delayed-soon)/n*100)+' de la cartera' : '—', cls:'green'},
+  ];
+  document.getElementById('kpiRow').innerHTML = kpis.map(k=>`
+    <div class="kpi">
+      <div class="label">${k.label}</div>
+      <div class="value ${k.cls||''}">${k.value}</div>
+      <div class="foot">${k.foot}</div>
+    </div>`).join('');
+}
 
-// Flag box
-const flagged = DATA.filter(r=>r.flags && r.flags.length);
-document.getElementById('flagBox').innerHTML = flagged.length
-  ? `<b>⚠ A validar (${flagged.length}):</b><br>` + flagged.map(f=>`• <b>${f.proyecto}</b> (${f.fase}, ${f.partner}): ${f.flags.join(' ')}`).join('<br>')
-  : '';
-if(!flagged.length) document.getElementById('flagBox').style.display='none';
+function renderFlags(dataset){
+  const flagged = dataset.filter(r=>r.flags && r.flags.length);
+  const box = document.getElementById('flagBox');
+  box.innerHTML = flagged.length
+    ? `<b>⚠ A validar (${flagged.length}):</b><br>` + flagged.map(f=>`• <b>${f.proyecto}</b> (${f.fase}, ${f.partner}): ${f.flags.join(' ')}`).join('<br>')
+    : '';
+  box.style.display = flagged.length ? '' : 'none';
+}
 
-// group helper
-function groupBy(key){
+function groupBy(dataset, key){
   const m = {};
-  DATA.forEach(r=>{ const k=r[key]||'Sin dato'; m[k]=(m[k]||0)+(r.importe||0); });
+  dataset.forEach(r=>{ const k=r[key]||'Sin dato'; m[k]=(m[k]||0)+(r.importe||0); });
   return Object.entries(m).sort((a,b)=>b[1]-a[1]);
 }
 function renderBars(el, groups){
+  if(!groups.length){ document.getElementById(el).innerHTML = '<div style="color:var(--muted);font-size:12.5px;">Sin datos.</div>'; return; }
   const max = Math.max(...groups.map(g=>g[1]));
   document.getElementById(el).innerHTML = groups.map(([k,v])=>`
     <div class="bar-row">
@@ -269,23 +290,24 @@ function renderBars(el, groups){
       <div class="bar-val">${fmtEUR(v)}</div>
     </div>`).join('');
 }
-renderBars('byPartner', groupBy('partner'));
-renderBars('byTipo', groupBy('tipologia'));
-renderBars('byFase', groupBy('fase'));
+function renderGroupBars(dataset){
+  renderBars('byPartner', groupBy(dataset, 'partner'));
+  renderBars('byTipo', groupBy(dataset, 'tipologia'));
+  renderBars('byFase', groupBy(dataset, 'fase'));
+}
 
-// Donut
-const statusCount = {green:0, amber:0, red:0};
-const statusAmt = {green:0, amber:0, red:0};
-DATA.forEach(r=>{ statusCount[r._status]++; statusAmt[r._status]+=r.importe||0; });
-const colors = {green:'#1f9d55', amber:'#d99a2b', red:'#c0392b'};
-const labels = {green:'En plazo', amber:'Próximo a vencer', red:'Retrasado'};
-(function drawDonut(){
+function renderDonut(dataset){
+  const n = dataset.length;
+  const statusCount = {green:0, amber:0, red:0};
+  const statusAmt = {green:0, amber:0, red:0};
+  dataset.forEach(r=>{ statusCount[r._status]++; statusAmt[r._status]+=r.importe||0; });
   const svg = document.getElementById('donut');
+  svg.innerHTML = '';
   const cx=75, cy=75, r=55, rw=22;
   let acc = -90;
   const order = ['green','amber','red'];
   order.forEach(k=>{
-    const frac = statusCount[k]/n;
+    const frac = n ? statusCount[k]/n : 0;
     if(frac<=0) return;
     const angle = frac*360;
     const large = angle>180?1:0;
@@ -312,28 +334,31 @@ const labels = {green:'En plazo', amber:'Próximo a vencer', red:'Retrasado'};
   t2.setAttribute('font-size','9'); t2.setAttribute('fill','#6b7688');
   t2.textContent = 'operaciones';
   svg.appendChild(t2);
-})();
-document.getElementById('donutList').innerHTML = ['green','amber','red'].map(k=>`
-  <div><span><span class="dot ${k}"></span>${labels[k]}</span><span>${statusCount[k]} · ${fmtEUR(statusAmt[k])}</span></div>
-`).join('');
+  document.getElementById('donutList').innerHTML = ['green','amber','red'].map(k=>`
+    <div><span><span class="dot ${k}"></span>${statusLabels[k]}</span><span>${statusCount[k]} · ${fmtEUR(statusAmt[k])}</span></div>
+  `).join('');
+}
 
-// Filters
-const selPartner = document.getElementById('fPartner');
-const selTipo = document.getElementById('fTipo');
-[...new Set(DATA.map(r=>r.partner))].sort().forEach(p=>selPartner.innerHTML+=`<option value="${p}">${p}</option>`);
-[...new Set(DATA.map(r=>r.tipologia))].sort().forEach(t=>selTipo.innerHTML+=`<option value="${t}">${t}</option>`);
-
-let sortKey='importe', sortDir=-1;
+function populateFilters(dataset){
+  const curPartner = selPartner.value, curTipo = selTipo.value;
+  selPartner.innerHTML = '<option value="">Todos los partners</option>';
+  selTipo.innerHTML = '<option value="">Todas las tipologías</option>';
+  [...new Set(dataset.map(r=>r.partner))].filter(Boolean).sort().forEach(p=>selPartner.innerHTML+=`<option value="${p}">${p}</option>`);
+  [...new Set(dataset.map(r=>r.tipologia))].filter(Boolean).sort().forEach(t=>selTipo.innerHTML+=`<option value="${t}">${t}</option>`);
+  // keep the previous selection if it still exists in the new dataset, else reset
+  if([...selPartner.options].some(o=>o.value===curPartner)) selPartner.value = curPartner;
+  if([...selTipo.options].some(o=>o.value===curTipo)) selTipo.value = curTipo;
+}
 
 function renderTable(){
   const q = document.getElementById('search').value.toLowerCase();
   const fp = selPartner.value, ft = selTipo.value, fe = document.getElementById('fEstado').value;
-  let rows = DATA.filter(r=>{
+  let rows = CURRENT_DATA.filter(r=>{
     if(fp && r.partner!==fp) return false;
     if(ft && r.tipologia!==ft) return false;
     if(fe && r._status!==fe) return false;
     if(q){
-      const hay = (r.proyecto+' '+r.partner+' '+r.provincia+' '+r.municipio).toLowerCase();
+      const hay = (r.proyecto+' '+r.partner+' '+(r.provincia||'')+' '+(r.municipio||'')).toLowerCase();
       if(!hay.includes(q)) return false;
     }
     return true;
@@ -344,7 +369,7 @@ function renderTable(){
     if(typeof va==='string') return sortDir*va.localeCompare(vb||'');
     return sortDir*((va||0)-(vb||0));
   });
-  document.getElementById('rowCount').textContent = rows.length+' de '+n+' operaciones · '+fmtEUR(rows.reduce((s,r)=>s+r.importe,0));
+  document.getElementById('rowCount').textContent = rows.length+' de '+CURRENT_N+' operaciones · '+fmtEUR(rows.reduce((s,r)=>s+(r.importe||0),0));
   document.getElementById('tbody').innerHTML = rows.map(r=>{
     const st = statusOf(r);
     const hasFlags = r.flags && r.flags.length;
@@ -362,6 +387,19 @@ function renderTable(){
       <td class="comment">${r.comentarios||''}${hasFlags?'<br><b style="color:#c0392b">⚠ '+r.flags.join(' ')+'</b>':''}</td>
     </tr>`;
   }).join('');
+}
+
+function renderAll(dataset){
+  dataset = dataset || [];
+  dataset.forEach(r=> r._status = statusOf(r).k);
+  CURRENT_DATA = dataset;
+  CURRENT_N = dataset.length;
+  renderKPIs(dataset);
+  renderFlags(dataset);
+  renderGroupBars(dataset);
+  renderDonut(dataset);
+  populateFilters(dataset);
+  renderTable();
 }
 
 // Changelog panel
@@ -389,13 +427,16 @@ document.getElementById('btnWeek').addEventListener('click', ()=>renderChanges('
 document.getElementById('btnMonth').addEventListener('click', ()=>renderChanges('mes'));
 renderChanges('semana');
 
-// Treasury panel
-(function renderTreasury(){
+// Treasury panel (parameterized so a historical snapshot's treasury data can be shown too)
+function renderTreasuryPanel(t){
+  t = t || {};
+  const margen = Array.isArray(t.margenMensual) ? t.margenMensual : [];
+  const deficitEntry = margen.find(m=>m.mes===t.mesDeficit);
   const kpis = [
-    {label:'Caja disponible hoy', value: fmtEUR(TREASURY.cajaDisponible), foot:'13-07-2026'},
-    {label:'Total disponible (con estimaciones)', value: fmtEUR(TREASURY.cajaDisponible + TREASURY.frPendiente + TREASURY.liqEst30d), foot:'Caja + FR pendiente + liq. est. 30 días'},
-    {label:'Mes con déficit proyectado', value: TREASURY.mesDeficit, foot: fmtEUR(TREASURY.margenMensual.find(m=>m.mes===TREASURY.mesDeficit).valor)+' de margen', cls:'red'},
-    {label:'Obligaciones fijas identificadas', value: fmtEUR(TREASURY.obligacionesFijas), foot:'EIC + Bafi'},
+    {label:'Caja disponible hoy', value: fmtEUR(t.cajaDisponible), foot: t.fechaReferencia || ''},
+    {label:'Total disponible (con estimaciones)', value: fmtEUR((t.cajaDisponible||0) + (t.frPendiente||0) + (t.liqEst30d||0)), foot:'Caja + FR pendiente + liq. est. 30 días'},
+    {label:'Mes con déficit proyectado', value: t.mesDeficit || '—', foot: deficitEntry ? fmtEUR(deficitEntry.valor)+' de margen' : 'sin déficit detectado', cls:'red'},
+    {label:'Obligaciones fijas identificadas', value: fmtEUR(t.obligacionesFijas), foot:'EIC + Bafi'},
   ];
   document.getElementById('treasuryKpis').innerHTML = kpis.map(k=>`
     <div class="kpi">
@@ -404,23 +445,28 @@ renderChanges('semana');
       <div class="foot">${k.foot}</div>
     </div>`).join('');
 
-  const maxAbs = Math.max(...TREASURY.margenMensual.map(m=>Math.abs(m.valor)));
-  document.getElementById('treasuryChart').innerHTML = TREASURY.margenMensual.map(m=>{
-    const neg = m.valor < 0;
-    const pct = Math.abs(m.valor)/maxAbs*100;
-    return `<div class="bar-row">
-      <div class="lbl">${m.mes}</div>
-      <div class="bar-track"><div class="bar-fill" style="width:${pct.toFixed(1)}%;background:${neg?'var(--red)':'var(--green)'}"></div></div>
-      <div class="bar-val" style="color:${neg?'var(--red)':'var(--green)'}">${fmtEUR(m.valor)}</div>
-    </div>`;
-  }).join('');
+  if(!margen.length){
+    document.getElementById('treasuryChart').innerHTML = '<div style="color:var(--muted);font-size:12.5px;">Sin datos de margen mensual.</div>';
+  } else {
+    const maxAbs = Math.max(...margen.map(m=>Math.abs(m.valor)), 1);
+    document.getElementById('treasuryChart').innerHTML = margen.map(m=>{
+      const neg = m.valor < 0;
+      const pct = Math.abs(m.valor)/maxAbs*100;
+      return `<div class="bar-row">
+        <div class="lbl">${m.mes}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${pct.toFixed(1)}%;background:${neg?'var(--red)':'var(--green)'}"></div></div>
+        <div class="bar-val" style="color:${neg?'var(--red)':'var(--green)'}">${fmtEUR(m.valor)}</div>
+      </div>`;
+    }).join('');
+  }
 
-  document.getElementById('treasuryPayments').innerHTML = TREASURY.pagos.map(p=>`
+  const pagos = Array.isArray(t.pagos) ? t.pagos : [];
+  document.getElementById('treasuryPayments').innerHTML = pagos.length ? pagos.map(p=>`
     <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px dashed var(--border);">
       <span>${p.fecha ? '<b>'+p.fecha+'</b> · ' : ''}${p.concepto}</span>
       <span style="color:var(--red);font-variant-numeric:tabular-nums;">${fmtEUR(p.importe)}</span>
-    </div>`).join('');
-})();
+    </div>`).join('') : '<div style="color:var(--muted);font-size:12.5px;">Sin pagos concretos detectados.</div>';
+}
 
 document.getElementById('search').addEventListener('input', renderTable);
 selPartner.addEventListener('change', renderTable);
@@ -435,7 +481,53 @@ document.querySelectorAll('thead th').forEach(th=>{
   });
 });
 
-renderTable();
+renderAll(DATA);
+renderTreasuryPanel(TREASURY);
+
+// Historical snapshot browsing (up to ~30 days, written daily by the pipeline)
+(async function initSnapshotPicker(){
+  const picker = document.getElementById('snapshotPicker');
+  const banner = document.getElementById('snapshotBanner');
+  const bannerText = document.getElementById('snapshotBannerText');
+
+  function backToToday(){
+    picker.value = '';
+    banner.style.display = 'none';
+    renderAll(DATA);
+    renderTreasuryPanel(TREASURY);
+    renderChanges(document.getElementById('btnWeek').classList.contains('active') ? 'semana' : 'mes');
+  }
+  document.getElementById('btnBackToday').addEventListener('click', backToToday);
+
+  let dates = [];
+  try{
+    const res = await fetch('snapshots/index.json', {cache:'no-store'});
+    if(res.ok) dates = await res.json();
+  }catch(e){ /* no snapshots yet, or not reachable — silently keep only "Hoy" */ }
+
+  dates.slice().sort().reverse().forEach(d=>{
+    const opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    picker.appendChild(opt);
+  });
+
+  picker.addEventListener('change', async ()=>{
+    const val = picker.value;
+    if(!val){ backToToday(); return; }
+    try{
+      const res = await fetch(`snapshots/${val}.json`, {cache:'no-store'});
+      if(!res.ok) throw new Error('snapshot no encontrado');
+      const snap = await res.json();
+      renderAll(snap.data || []);
+      renderTreasuryPanel(snap.treasury || {});
+      bannerText.textContent = `Viendo instantánea del ${val} — no es la vista en vivo. Los "Cambios recientes" siguen mostrando el histórico hasta hoy.`;
+      banner.style.display = 'flex';
+    }catch(e){
+      alert('No se pudo cargar la instantánea de esa fecha.');
+      picker.value = '';
+    }
+  });
+})();
 </script>
 </body>
 </html>
