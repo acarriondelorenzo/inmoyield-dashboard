@@ -1,10 +1,56 @@
 import csv, json, sys, datetime
 from collections import defaultdict, Counter
 
-HEADER = ["Proyectos","Fase","SL","Provincia","Municipio","TipoActivo","Tipologia","Canal","Partner",
-          "Formato","Contrato","InvTotalEst","Invertido","FCInicial","FCFinal","BRealizado","EstB",
-          "FechaInicio","FechaFin","EstFin0","Retraso","EstFin1","PctEjecucion","EstTIR","EstROI",
-          "Meses","TIR","ROI","Link","Estado","Comentarios"]
+# (expected label as it appears in row 4 of the sheet export, internal key)
+# Matching is done by NAME, not position, so the parser survives columns being
+# reordered or new columns being inserted in the source sheet.
+EXPECTED_COLUMNS = [
+    ("Proyectos", "Proyectos"), ("Fase", "Fase"), ("SL", "SL"),
+    ("Provincia", "Provincia"), ("Municipio", "Municipio"),
+    ("Tipo Activo", "TipoActivo"), ("Tipología", "Tipologia"), ("Canal", "Canal"),
+    ("Partner", "Partner"), ("Formato de inversión", "Formato"), ("Contrato", "Contrato"),
+    ("Inv. Total. Est.", "InvTotalEst"), ("Invertido", "Invertido"),
+    ("FC Inicial", "FCInicial"), ("FC Final", "FCFinal"),
+    ("B° Realizado", "BRealizado"), ("Est. B°", "EstB"),
+    ("Fecha inicio", "FechaInicio"), ("Fecha Fin", "FechaFin"),
+    ("Est. Fin0", "EstFin0"), ("Retraso", "Retraso"), ("Est. Fin1", "EstFin1"),
+    ("% Ejecución", "PctEjecucion"), ("Est. TIR", "EstTIR"), ("Est. ROI", "EstROI"),
+    ("Meses", "Meses"), ("TIR", "TIR"), ("ROI", "ROI"), ("Link", "Link"),
+    ("Estado", "Estado"), ("Comentarios", "Comentarios"),
+]
+# columns without which we cannot reliably build the active-investments table;
+# if any of these can't be located by name in the actual header row, abort
+# rather than risk silently misaligned data.
+CRITICAL_KEYS = {"Proyectos", "Fase", "Partner", "Invertido", "FechaInicio", "FechaFin",
+                  "EstFin0", "EstFin1", "Retraso", "PctEjecucion", "EstTIR", "Estado", "Comentarios"}
+
+def _norm(s):
+    return ' '.join((s or '').split()).strip()
+
+def resolve_columns(header_row):
+    """Map each expected internal key to the column index found in the actual
+    header row, matched by name. Returns (index_by_key, missing_keys, unknown_columns)."""
+    actual = [_norm(c) for c in header_row]
+    label_to_idx = {}
+    for i, cell in enumerate(actual):
+        if cell:
+            label_to_idx[cell] = i
+    index_by_key = {}
+    missing = []
+    for label, key in EXPECTED_COLUMNS:
+        if label in label_to_idx:
+            index_by_key[key] = label_to_idx[label]
+        else:
+            missing.append((label, key))
+    known_labels = {label for label, _ in EXPECTED_COLUMNS}
+    unknown_columns = [c for c in actual if c and c not in known_labels]
+    return index_by_key, missing, unknown_columns
+
+def row_get(cells, index_by_key, key, default=''):
+    idx = index_by_key.get(key)
+    if idx is None or idx >= len(cells):
+        return default
+    return cells[idx]
 
 def clean_num(s):
     if s is None: return None
@@ -36,38 +82,61 @@ def clean_date(s):
         except: return None
     return None
 
+class SchemaError(Exception):
+    def __init__(self, missing, unknown):
+        self.missing = missing
+        self.unknown = unknown
+        labels = ", ".join(f"'{label}'" for label, key in missing)
+        msg = f"La estructura de la hoja parece haber cambiado: no se encontraron las columnas críticas {labels}."
+        if unknown:
+            msg += f" Columnas nuevas/no reconocidas presentes en la hoja: {', '.join(unknown)}."
+        super().__init__(msg)
+
 def parse_csv(csv_path):
     """Parse the raw CSV export of the 'BBDD INVERSIONES' tab into a list of
-    active-investment dicts (Estado == 'Invertido'), with duplicate/anomaly flags."""
+    active-investment dicts (Estado == 'Invertido'), with duplicate/anomaly flags.
+    Columns are located by NAME (header row), not fixed position, so the parser
+    keeps working if columns get reordered or new ones are inserted upstream."""
     with open(csv_path, encoding='utf-8') as f:
         lines = f.readlines()
     # first 3 lines are metadata (title row, date row, blank row), 4th is the real header
+    header_line = lines[3] if len(lines) > 3 else ''
+    header_row = next(csv.reader([header_line]), [])
+    index_by_key, missing, unknown_columns = resolve_columns(header_row)
+
+    missing_critical = [(label, key) for label, key in missing if key in CRITICAL_KEYS]
+    if missing_critical:
+        raise SchemaError(missing_critical, unknown_columns)
+
     data_lines = lines[4:]
     reader = csv.reader(data_lines)
     all_rows = list(reader)
 
-    total_rows = len([r for r in all_rows if len(r) >= 31 and r[0].strip()])
+    min_cols = max(index_by_key.values()) + 1 if index_by_key else 0
+    total_rows = len([r for r in all_rows if len(r) >= min_cols and row_get(r, index_by_key, 'Proyectos').strip()])
+
+    def g(cells, key):
+        return row_get(cells, index_by_key, key)
 
     parsed = []
     for cells in all_rows:
-        if len(cells) < 31: continue
-        d = dict(zip(HEADER, cells))
-        if not d.get('Proyectos', '').strip(): continue
-        if d.get('Estado', '').strip() != 'Invertido': continue
+        if len(cells) < min_cols: continue
+        if not g(cells, 'Proyectos').strip(): continue
+        if g(cells, 'Estado').strip() != 'Invertido': continue
         parsed.append({
-            "proyecto": d['Proyectos'], "fase": d['Fase'], "sl": d['SL'],
-            "provincia": d['Provincia'] or None, "municipio": d['Municipio'] or None,
-            "tipoActivo": d['TipoActivo'], "tipologia": d['Tipologia'], "canal": d['Canal'],
-            "partner": d['Partner'], "formato": d['Formato'], "contrato": d['Contrato'],
-            "importe": clean_num(d['Invertido']),
-            "fechaInicio": clean_date(d['FechaInicio']),
-            "fechaFin": clean_date(d.get('FechaFin')),
-            "estFin0": d['EstFin0'].strip() or None, "estFin1": d['EstFin1'].strip() or None,
-            "retraso": clean_num(d['Retraso']),
-            "pctEjecucion": clean_pct(d['PctEjecucion']),
-            "estTIR": clean_pct(d['EstTIR']), "estROI": clean_pct(d['EstROI']),
-            "meses": d['Meses'].strip() or None,
-            "comentarios": d['Comentarios'].strip(),
+            "proyecto": g(cells, 'Proyectos'), "fase": g(cells, 'Fase'), "sl": g(cells, 'SL'),
+            "provincia": g(cells, 'Provincia') or None, "municipio": g(cells, 'Municipio') or None,
+            "tipoActivo": g(cells, 'TipoActivo'), "tipologia": g(cells, 'Tipologia'), "canal": g(cells, 'Canal'),
+            "partner": g(cells, 'Partner'), "formato": g(cells, 'Formato'), "contrato": g(cells, 'Contrato'),
+            "importe": clean_num(g(cells, 'Invertido')),
+            "fechaInicio": clean_date(g(cells, 'FechaInicio')),
+            "fechaFin": clean_date(g(cells, 'FechaFin')),
+            "estFin0": g(cells, 'EstFin0').strip() or None, "estFin1": g(cells, 'EstFin1').strip() or None,
+            "retraso": clean_num(g(cells, 'Retraso')),
+            "pctEjecucion": clean_pct(g(cells, 'PctEjecucion')),
+            "estTIR": clean_pct(g(cells, 'EstTIR')), "estROI": clean_pct(g(cells, 'EstROI')),
+            "meses": g(cells, 'Meses').strip() or None,
+            "comentarios": g(cells, 'Comentarios').strip(),
             "flags": []
         })
 
@@ -92,14 +161,13 @@ def parse_csv(csv_path):
 
     # anomaly: FC Final / Fecha Fin registrada pese a seguir "Invertido"
     for cells in all_rows:
-        if len(cells) < 31: continue
-        d = dict(zip(HEADER, cells))
-        if d.get('Estado', '').strip() == 'Invertido' and d.get('FechaFin', '').strip():
+        if len(cells) < min_cols: continue
+        if g(cells, 'Estado').strip() == 'Invertido' and g(cells, 'FechaFin').strip():
             for r in out:
-                if r['proyecto'] == d['Proyectos'] and r['fase'] == d['Fase']:
+                if r['proyecto'] == g(cells, 'Proyectos') and r['fase'] == g(cells, 'Fase'):
                     r['flags'].append("Tiene FC Final / Fecha Fin registrada pese a Estado=Invertido -> verificar si sigue activa.")
 
-    return out, total_rows
+    return out, total_rows, missing, unknown_columns
 
 
 def validate(new_rows, total_rows_seen, baseline_rows):
@@ -187,7 +255,18 @@ if __name__ == '__main__':
 
     today_str = datetime.date.today().isoformat()
 
-    new_rows, total_rows_seen = parse_csv(live_csv)
+    try:
+        new_rows, total_rows_seen, missing_noncritical, unknown_columns = parse_csv(live_csv)
+    except SchemaError as e:
+        print("VALIDATION_FAILED")
+        print(" -", str(e))
+        sys.exit(1)
+
+    if missing_noncritical:
+        labels = ", ".join(f"'{label}'" for label, key in missing_noncritical)
+        print(f"AVISO (no crítico): no se encontraron estas columnas esperadas, se han dejado en blanco: {labels}")
+    if unknown_columns:
+        print(f"AVISO: columnas presentes en la hoja que no se reconocen (puede ser una columna nueva añadida en origen): {', '.join(unknown_columns)}")
 
     try:
         baseline_rows = json.load(open(baseline_json, encoding='utf-8'))
