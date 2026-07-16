@@ -215,6 +215,74 @@
      "detalle": "Nuevo comentario: \"15.06 Deudor quiere comprar por 20-25% más que inversión. Tanto si se vende como si no, saldremos antes de otoño de la operación.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-07-16",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Equity de Napala (F1)",
+     "fase": "FASE 1",
+     "partner": "Napala",
+     "detalle": "Aparece en cartera activa por 520.173 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Trinidad 67",
+     "fase": "FASE 2",
+     "partner": "Re4M",
+     "detalle": "Aparece en cartera activa por 85.000 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Equity de Napala (F2)",
+     "fase": "FASE 2",
+     "partner": "Napala",
+     "detalle": "Aparece en cartera activa por 822.032 €"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Ya no aparece como 'Invertido' (antes 500.000 €)"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Equity de Napala",
+     "fase": "FASE 2",
+     "partner": "Napala",
+     "detalle": "Ya no aparece como 'Invertido' (antes 822.032 €)"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Equity de Napala",
+     "fase": "FASE 1",
+     "partner": "Napala",
+     "detalle": "Ya no aparece como 'Invertido' (antes 520.173 €)"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "María de Molina 22",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Nuevo comentario: \"Sujeto a propuesta de plan de reestructuración de Velzia\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Joselito 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Nuevo comentario: \"Sujeto a propuesta de plan de reestructuración de Velzia\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Génova 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Nuevo comentario: \"Sujeto a propuesta de plan de reestructuración de Velzia\""
+    }
+   ]
   }
  ]
 }

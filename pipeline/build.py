@@ -118,6 +118,13 @@ def parse_csv(csv_path):
     def g(cells, key):
         return row_get(cells, index_by_key, key)
 
+    # rows with fewer cells than the header (a cell got deleted/shifted upstream in the
+    # sheet for just that row, e.g. someone deleted a cell instead of clearing it) are
+    # unsafe to parse positionally -> skip them, but never silently: surface the project
+    # name so a human can go fix the source row instead of the operation just vanishing.
+    short_rows = [cells[0].strip() for cells in all_rows
+                  if 0 < len(cells) < min_cols and cells[0].strip()]
+
     parsed = []
     for cells in all_rows:
         if len(cells) < min_cols: continue
@@ -141,23 +148,25 @@ def parse_csv(csv_path):
         })
 
     # generic duplicate detection: same proyecto name appearing more than once with
-    # identical importe/fechaInicio/comentarios across "Fase" -> likely a copy/paste
-    # duplicate in the sheet rather than a genuine second tranche. Keep first, flag it,
-    # drop the rest (do NOT silently double-count capital).
+    # identical importe/fechaInicio/comentarios across "Fase" -> could be a copy/paste
+    # duplicate, or a legitimate co-inversion split evenly across two vehiculos/Fases
+    # with the same terms (e.g. Trinidad 67, confirmed by el equipo as 2 inversiones
+    # reales de 85k, una por Fase). NEVER drop capital automatically based on a
+    # heuristic guess -> keep every row, only flag for manual visibility.
     groups = defaultdict(list)
     for i, r in enumerate(parsed):
         groups[r['proyecto']].append(i)
-    drop_idx = set()
     for proyecto, idxs in groups.items():
         if len(idxs) < 2: continue
         keyf = lambda i: (parsed[i]['importe'], parsed[i]['fechaInicio'], parsed[i]['comentarios'])
         if len(set(keyf(i) for i in idxs)) == 1:
-            keep = idxs[0]
-            parsed[keep]['flags'].append(
-                f"Existe(n) {len(idxs)-1} fila(s) adicional(es) idéntica(s) de '{proyecto}' en otra Fase "
-                f"con importe/fecha/comentario idénticos -> posible duplicado, contado una sola vez. Verificar con el equipo.")
-            drop_idx.update(idxs[1:])
-    out = [r for i, r in enumerate(parsed) if i not in drop_idx]
+            for i in idxs:
+                parsed[i]['flags'].append(
+                    f"Coincide con {len(idxs)-1} fila(s) adicional(es) de '{proyecto}' en otra Fase con "
+                    f"importe/fecha/comentario idénticos. Puede ser una co-inversión legítima repartida entre "
+                    f"Fases/vehículos (p. ej. Trinidad 67) o un duplicado de carga -> no se descarta del cómputo; "
+                    f"verificar con el equipo si aplica a este proyecto en concreto.")
+    out = parsed
 
     # anomaly: FC Final / Fecha Fin registrada pese a seguir "Invertido"
     for cells in all_rows:
@@ -167,7 +176,7 @@ def parse_csv(csv_path):
                 if r['proyecto'] == g(cells, 'Proyectos') and r['fase'] == g(cells, 'Fase'):
                     r['flags'].append("Tiene FC Final / Fecha Fin registrada pese a Estado=Invertido -> verificar si sigue activa.")
 
-    return out, total_rows, missing, unknown_columns
+    return out, total_rows, missing, unknown_columns, short_rows
 
 
 def validate(new_rows, total_rows_seen, baseline_rows):
@@ -288,7 +297,7 @@ if __name__ == '__main__':
     today_str = datetime.date.today().isoformat()
 
     try:
-        new_rows, total_rows_seen, missing_noncritical, unknown_columns = parse_csv(live_csv)
+        new_rows, total_rows_seen, missing_noncritical, unknown_columns, short_rows = parse_csv(live_csv)
     except SchemaError as e:
         print("VALIDATION_FAILED")
         print(" -", str(e))
@@ -299,6 +308,10 @@ if __name__ == '__main__':
         print(f"AVISO (no crítico): no se encontraron estas columnas esperadas, se han dejado en blanco: {labels}")
     if unknown_columns:
         print(f"AVISO: columnas presentes en la hoja que no se reconocen (puede ser una columna nueva añadida en origen): {', '.join(unknown_columns)}")
+    if short_rows:
+        print(f"AVISO IMPORTANTE: {len(short_rows)} fila(s) excluida(s) del todo por tener menos celdas de las esperadas "
+              f"(probable celda borrada en el Sheet en lugar de vaciada, descuadra la fila): {', '.join(short_rows)}. "
+              f"Revisar y corregir esa fila en origen; hasta entonces esa operación no aparecerá en el dashboard.")
 
     try:
         baseline_rows = json.load(open(baseline_json, encoding='utf-8'))
