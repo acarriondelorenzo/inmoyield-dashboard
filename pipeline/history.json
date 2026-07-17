@@ -283,6 +283,18 @@
      "detalle": "Nuevo comentario: \"Sujeto a propuesta de plan de reestructuración de Velzia\""
     }
    ]
+  },
+  {
+   "fecha": "2026-07-17",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Aparece en cartera activa por 500.000 €"
+    }
+   ]
   }
  ]
 }

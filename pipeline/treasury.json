@@ -24,20 +24,15 @@
  "mesDeficit": "Noviembre",
  "pagos": [
   {
-   "fecha": "25-08",
-   "concepto": "Carlet Agosto",
-   "importe": -104028.0
+   "fecha": "30-07",
+   "concepto": "Carlet Pago Julio",
+   "importe": -162031.0
   },
   {
    "fecha": "30-08",
    "concepto": "Escritura Esquivias",
    "importe": -241625.0
-  },
-  {
-   "fecha": "30-07",
-   "concepto": "Carlet Pago Julio",
-   "importe": -162031.0
   }
  ],
- "fechaReferencia": "2026-07-16"
+ "fechaReferencia": "2026-07-17"
 }
