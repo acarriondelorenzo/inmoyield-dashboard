@@ -295,6 +295,18 @@
      "detalle": "Aparece en cartera activa por 500.000 €"
     }
    ]
+  },
+  {
+   "fecha": "2026-07-26",
+   "cambios": [
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "San Lucas 5",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Ya no aparece como 'Invertido' (antes 63.187 €)"
+    }
+   ]
   }
  ]
 }
