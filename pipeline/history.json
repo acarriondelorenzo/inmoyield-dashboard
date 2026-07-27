@@ -307,6 +307,39 @@
      "detalle": "Ya no aparece como 'Invertido' (antes 63.187 €)"
     }
    ]
+  },
+  {
+   "fecha": "2026-07-27",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "San Lucas 5",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Aparece en cartera activa por 63.187 €"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Ya no aparece como 'Invertido' (antes 300.000 €)"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "O Donell 18",
+     "fase": "FASE 2",
+     "partner": "Velzia",
+     "detalle": "Ya no aparece como 'Invertido' (antes 500.000 €)"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Promoción Salou (24viv.)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Ya no aparece como 'Invertido' (antes 300.000 €)"
+    }
+   ]
   }
  ]
 }
