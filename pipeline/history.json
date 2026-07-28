@@ -340,6 +340,32 @@
      "detalle": "Ya no aparece como 'Invertido' (antes 300.000 €)"
     }
    ]
+  },
+  {
+   "fecha": "2026-07-28",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Aparece en cartera activa por 300.000 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "O Donell 18",
+     "fase": "FASE 2",
+     "partner": "Velzia",
+     "detalle": "Aparece en cartera activa por 500.000 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Promoción Salou (24viv.)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Aparece en cartera activa por 300.000 €"
+    }
+   ]
   }
  ]
 }

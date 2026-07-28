@@ -1,24 +1,24 @@
 {
- "cajaDisponible": 133410.0,
+ "cajaDisponible": 133192.0,
  "frPendiente": 500000.0,
  "liqEst30d": 1200000.0,
  "obligacionesFijas": 596000.0,
  "margenMensual": [
   {
    "mes": "Agosto",
-   "valor": 730726.0
+   "valor": 730508.0
   },
   {
    "mes": "Septiembre",
-   "valor": 159705.0
+   "valor": 159487.0
   },
   {
    "mes": "Octubre",
-   "valor": 94688.0
+   "valor": 94470.0
   },
   {
    "mes": "Noviembre",
-   "valor": -240626.0
+   "valor": -240844.0
   }
  ],
  "mesDeficit": "Noviembre",
@@ -34,5 +34,5 @@
    "importe": -241625.0
   }
  ],
- "fechaReferencia": "2026-07-27"
+ "fechaReferencia": "2026-07-28"
 }
