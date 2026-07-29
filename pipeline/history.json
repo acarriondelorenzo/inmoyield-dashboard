@@ -366,6 +366,39 @@
      "detalle": "Aparece en cartera activa por 300.000 €"
     }
    ]
+  },
+  {
+   "fecha": "2026-07-29",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Edif. Mora Ebro (19 viv.)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Aparece en cartera activa por 331.850 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Edif. Mora Ebro (19 viv.)",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Aparece en cartera activa por 150.000 €"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "WIP 19 viv. Mora de Ebro",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Ya no aparece como 'Invertido' (antes 331.850 €)"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "WIP 19 viv. Mora de Ebro",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Ya no aparece como 'Invertido' (antes 150.000 €)"
+    }
+   ]
   }
  ]
 }
