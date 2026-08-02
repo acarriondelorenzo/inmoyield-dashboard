@@ -496,7 +496,7 @@
   "estTIR": 15.0,
   "estROI": 10.9,
   "meses": "9",
-  "comentarios": "15.07 Ante resistencia ayuntamiento para facilitar segregación están reconvirtiendo en apartahotel con 1 de 3 portales vendidos. Proponen convertir demora en ordinario hasta Dic. y liquidarán antes si hace falta con ingresos de otros proyectos (villa vendida en Javea).",
+  "comentarios": "Adenda para convertir demora en ordinario con plazo max Dic26.",
   "flags": []
  },
  {
@@ -772,9 +772,7 @@
   "estROI": 21.0,
   "meses": "8",
   "comentarios": "15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada: Duración estimada 4 meses.",
-  "flags": [
-   "Coincide con 1 fila(s) adicional(es) de 'Trinidad 67' en otra Fase con importe/fecha/comentario idénticos. Puede ser una co-inversión legítima repartida entre Fases/vehículos (p. ej. Trinidad 67) o un duplicado de carga -> no se descarta del cómputo; verificar con el equipo si aplica a este proyecto en concreto."
-  ]
+  "flags": []
  },
  {
   "proyecto": "Trinidad 67",
@@ -798,10 +796,8 @@
   "estTIR": 36.0,
   "estROI": 21.0,
   "meses": "8",
-  "comentarios": "15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada: Duración estimada 4 meses.",
-  "flags": [
-   "Coincide con 1 fila(s) adicional(es) de 'Trinidad 67' en otra Fase con importe/fecha/comentario idénticos. Puede ser una co-inversión legítima repartida entre Fases/vehículos (p. ej. Trinidad 67) o un duplicado de carga -> no se descarta del cómputo; verificar con el equipo si aplica a este proyecto en concreto."
-  ]
+  "comentarios": "15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada.",
+  "flags": []
  },
  {
   "proyecto": "Edif. Mora Ebro (19 viv.)",

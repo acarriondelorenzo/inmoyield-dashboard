@@ -399,6 +399,25 @@
      "detalle": "Ya no aparece como 'Invertido' (antes 150.000 €)"
     }
    ]
+  },
+  {
+   "fecha": "2026-08-02",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Trinidad 67",
+     "fase": "FASE 2",
+     "partner": "Re4M",
+     "detalle": "Nuevo comentario: \"15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Lofts Getafe (14)",
+     "fase": "FASE 2",
+     "partner": "Make Kubo",
+     "detalle": "Nuevo comentario: \"Adenda para convertir demora en ordinario con plazo max Dic26.\""
+    }
+   ]
   }
  ]
 }
