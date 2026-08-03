@@ -772,7 +772,9 @@
   "estROI": 21.0,
   "meses": "8",
   "comentarios": "15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada: Duración estimada 4 meses.",
-  "flags": []
+  "flags": [
+   "Coincide con 1 fila(s) adicional(es) de 'Trinidad 67' en otra Fase con importe/fecha/comentario idénticos. Puede ser una co-inversión legítima repartida entre Fases/vehículos (p. ej. Trinidad 67) o un duplicado de carga -> no se descarta del cómputo; verificar con el equipo si aplica a este proyecto en concreto."
+  ]
  },
  {
   "proyecto": "Trinidad 67",
@@ -796,8 +798,10 @@
   "estTIR": 36.0,
   "estROI": 21.0,
   "meses": "8",
-  "comentarios": "15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada.",
-  "flags": []
+  "comentarios": "15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada: Duración estimada 4 meses.",
+  "flags": [
+   "Coincide con 1 fila(s) adicional(es) de 'Trinidad 67' en otra Fase con importe/fecha/comentario idénticos. Puede ser una co-inversión legítima repartida entre Fases/vehículos (p. ej. Trinidad 67) o un duplicado de carga -> no se descarta del cómputo; verificar con el equipo si aplica a este proyecto en concreto."
+  ]
  },
  {
   "proyecto": "Edif. Mora Ebro (19 viv.)",

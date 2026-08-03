@@ -418,6 +418,18 @@
      "detalle": "Nuevo comentario: \"Adenda para convertir demora en ordinario con plazo max Dic26.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-08-03",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Trinidad 67",
+     "fase": "FASE 2",
+     "partner": "Re4M",
+     "detalle": "Nuevo comentario: \"15.06 Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. Obra iniciada: Duración estimada 4 meses.\""
+    }
+   ]
   }
  ]
 }
