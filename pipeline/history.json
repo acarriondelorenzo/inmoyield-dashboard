@@ -123,6 +123,67 @@
      "detalle": "Nuevo comentario: \"30.08 visita in situ. obra avanza a muy buen ritmo. confiamos en superar tiempos estimados iniciales.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-09-09",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Santa Anna - Reus (8 viv)",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Aparece en cartera activa por 600.000 €"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Santa Anna - Reus (8 vip)",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Ya no aparece como 'Invertido' (antes 600.000 €)"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"Escritura aplazada al 16 sept. Requerirá el pago del IVA total (no solo parte prop. pago inicial)\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"Clausula activada para tipo fijo del 14 desde Mayo. Se ha bajado el precio de forma agresiva. 8 visitas recibidas en agosto. Esperamos fuerte reactivación comercial en septiembre. Próximo informe 18 sept.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Jerónimo Zurita, 3",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"1.09 5 visitas en agosto con una pareja interesada que volverá a visitar con la familia\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"Escritura aplazada al 16 sept. Requerirá el pago del IVA total (no solo parte prop. pago inicial)\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"7. 09 Bajada de precio.  Recibiendo visitas. Prox informe 18 sept.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Alcántara 62 (Mad-7)",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"recibido 7 visitas en agosto. prioridad consolidar contactos\""
+    }
+   ]
   }
  ]
 }

@@ -1,38 +1,33 @@
 {
- "cajaDisponible": 953169.0,
+ "cajaDisponible": 728675.0,
  "frPendiente": 0.0,
  "liqEst30d": 170000.0,
  "obligacionesFijas": 596000.0,
  "margenMensual": [
   {
-   "mes": "Septiembre",
-   "valor": 166141.0
+   "mes": "Octubre",
+   "valor": -225346.0
   },
   {
    "mes": "Noviembre",
-   "valor": -222880.0
+   "valor": -290363.0
   },
   {
    "mes": "Diciembre",
-   "valor": -287897.0
+   "valor": -765677.0
   },
   {
    "mes": "Enero",
-   "valor": -763211.0
+   "valor": -765677.0
   }
  ],
- "mesDeficit": "Enero",
+ "mesDeficit": "Diciembre",
  "pagos": [
   {
-   "fecha": "25-08",
-   "concepto": "Carlet Agosto",
-   "importe": -104028.0
-  },
-  {
-   "fecha": "30-08",
+   "fecha": "16-09",
    "concepto": "Esquivias",
    "importe": -260000.0
   }
  ],
- "fechaReferencia": "2026-09-04"
+ "fechaReferencia": "2026-09-09"
 }
