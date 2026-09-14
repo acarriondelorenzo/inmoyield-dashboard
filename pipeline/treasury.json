@@ -6,19 +6,19 @@
  "margenMensual": [
   {
    "mes": "Octubre",
-   "valor": -225346.0
+   "valor": -235346.0
   },
   {
    "mes": "Noviembre",
-   "valor": -290363.0
+   "valor": -840363.0
   },
   {
    "mes": "Diciembre",
-   "valor": -765677.0
+   "valor": -1032377.0
   },
   {
    "mes": "Enero",
-   "valor": -765677.0
+   "valor": -1032377.0
   }
  ],
  "mesDeficit": "Diciembre",
@@ -26,8 +26,8 @@
   {
    "fecha": "16-09",
    "concepto": "Esquivias",
-   "importe": -260000.0
+   "importe": -270000.0
   }
  ],
- "fechaReferencia": "2026-09-09"
+ "fechaReferencia": "2026-09-14"
 }
