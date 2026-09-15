@@ -327,11 +327,11 @@
  {
   "proyecto": "Edif. Pantoja (Fase II)",
   "fase": "FASE 2",
-  "sl": "Inmoyield 3",
+  "sl": "Inmoyield 4",
   "provincia": "Toledo",
   "municipio": "Pantoja",
   "tipoActivo": "Edificio",
-  "tipologia": "Flipping",
+  "tipologia": "WIP",
   "canal": "Directo",
   "partner": "Sultan",
   "formato": "Deuda",
@@ -350,7 +350,7 @@
   "flags": []
  },
  {
-  "proyecto": "Edificio Bétera 11 viv.",
+  "proyecto": "Edificio Aétera 11 viv.",
   "fase": "FASE 1",
   "sl": "Inmoyield 1",
   "provincia": "Valencia",
@@ -525,7 +525,7 @@
   "flags": []
  },
  {
-  "proyecto": "Génova 23",
+  "proyecto": "Génóva 23",
   "fase": "FASE 1",
   "sl": "Inmoyield 1",
   "provincia": "Madrid",
@@ -615,13 +615,13 @@
   "fechaInicio": "2025-12-09",
   "fechaFin": null,
   "estFin0": "2026-08",
-  "estFin1": "2026-09",
+  "estFin1": "2026-10",
   "retraso": 1.3,
-  "pctEjecucion": 102.63,
+  "pctEjecucion": 92.23,
   "estTIR": 18.0,
   "estROI": 13.25,
   "meses": "8",
-  "comentarios": "Todo vendido (salvo 2 unidades esperando para max. bº). Obra al 80%",
+  "comentarios": "Cobrados ordinarios. Mantenemos principal a tipo demora (18%)",
   "flags": []
  },
  {
