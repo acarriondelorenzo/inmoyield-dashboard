@@ -257,6 +257,39 @@
      "detalle": "Nuevo comentario: \"Cobrados ordinarios. Mantenemos principal a tipo demora (18%)\""
     }
    ]
+  },
+  {
+   "fecha": "2026-09-16",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Edificio Bétera 11 viv.",
+     "fase": "FASE 1",
+     "partner": "J.Pascual & N.Blat",
+     "detalle": "Aparece en cartera activa por 300.000 €"
+    },
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Génôva 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Aparece en cartera activa por 250.000 €"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Edificio Aétera 11 viv.",
+     "fase": "FASE 1",
+     "partner": "J.Pascual & N.Blat",
+     "detalle": "Ya no aparece como 'Invertido' (antes 300.000 €)"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Génóva 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Ya no aparece como 'Invertido' (antes 250.000 €)"
+    }
+   ]
   }
  ]
 }

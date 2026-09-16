@@ -327,11 +327,11 @@
  {
   "proyecto": "Edif. Pantoja (Fase II)",
   "fase": "FASE 2",
-  "sl": "Inmoyield 4",
+  "sl": "Inmoyield 3",
   "provincia": "Toledo",
   "municipio": "Pantoja",
   "tipoActivo": "Edificio",
-  "tipologia": "WIP",
+  "tipologia": "Flipping",
   "canal": "Directo",
   "partner": "Sultan",
   "formato": "Deuda",
@@ -350,7 +350,7 @@
   "flags": []
  },
  {
-  "proyecto": "Edificio Aétera 11 viv.",
+  "proyecto": "Edificio Bétera 11 viv.",
   "fase": "FASE 1",
   "sl": "Inmoyield 1",
   "provincia": "Valencia",
@@ -525,7 +525,7 @@
   "flags": []
  },
  {
-  "proyecto": "Génóva 23",
+  "proyecto": "Génôva 23",
   "fase": "FASE 1",
   "sl": "Inmoyield 1",
   "provincia": "Madrid",
