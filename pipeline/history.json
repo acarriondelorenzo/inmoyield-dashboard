@@ -309,6 +309,32 @@
      "detalle": "Ya no aparece como 'Invertido' (antes 250.000 €)"
     }
    ]
+  },
+  {
+   "fecha": "2026-09-18",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Génova 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Aparece en cartera activa por 250.000 €"
+    },
+    {
+     "tipo": "ya_no_activa",
+     "proyecto": "Génóva 23",
+     "fase": "FASE 1",
+     "partner": "Velzia",
+     "detalle": "Ya no aparece como 'Invertido' (antes 250.000 €)"
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Importe invertido: 247.000 € → 262.000 €"
+    }
+   ]
   }
  ]
 }
