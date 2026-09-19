@@ -335,6 +335,25 @@
      "detalle": "Importe invertido: 247.000 € → 262.000 €"
     }
    ]
+  },
+  {
+   "fecha": "2026-09-19",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"Escriturado el 17.09\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"Escriturado el 17.09\""
+    }
+   ]
   }
  ]
 }
