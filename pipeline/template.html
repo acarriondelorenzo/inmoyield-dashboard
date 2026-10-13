@@ -157,18 +157,19 @@
   </div>
 
   <div class="panel" style="margin-bottom:22px;">
-    <h3>Tesorería y obligaciones de pago (pestaña "Obligaciones de Pago")</h3>
+    <h3 id="treasuryTitle">Tesorería y calendario de pagos</h3>
     <div class="kpis" id="treasuryKpis" style="grid-template-columns:repeat(4,1fr);margin-bottom:16px;"></div>
     <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:20px;">
       <div>
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px;">Margen de maniobra mensual estimado</div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px;" id="treasuryChartTitle">Margen de maniobra mensual estimado</div>
         <div id="treasuryChart"></div>
       </div>
       <div>
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px;">Próximos pagos concretos</div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px;" id="treasuryListTitle">Próximos pagos concretos</div>
         <div id="treasuryPayments" style="font-size:12px;"></div>
       </div>
     </div>
+    <div id="treasuryWarnings" style="margin-top:14px;"></div>
     <div style="font-size:11px;color:var(--muted);margin-top:12px;" id="treasuryRefNote">Fecha de referencia de esta previsión: <span id="treasuryRefDate">—</span>. Algunas líneas de la pestaña original no tenían etiqueta clara en la hoja de origen y se han omitido para no interpretar cifras sin contexto (p. ej. una partida de -120.000€ sin descripción, y la posición exacta de "Bafi -476.000€" en el calendario).</div>
   </div>
 
@@ -211,7 +212,7 @@
 </main>
 
 <footer>
-  Fuente: Google Drive INMOYIELD → carpeta "00 INVERSIONES" → hoja <i>"Pipeline y BBDD Inversiones Inmoyield"</i>. Pestaña "BBDD INVERSIONES" (lectura del __SOURCE_DATE__), filtrado por Estado = "Invertido" (excluye "En Estudio", "Pasada" y "Descarte") · Pestaña "Obligaciones de Pago" para el panel de tesorería.<br>
+  Fuente: Google Drive INMOYIELD → carpeta "00 INVERSIONES" → hoja <i>"Pipeline y BBDD Inversiones Inmoyield"</i>. Pestaña "BBDD INVERSIONES" (lectura del __SOURCE_DATE__), filtrado por Estado = "Invertido" (excluye "En Estudio", "Pasada" y "Descarte") · Tesorería: archivo <i>"BBDD Inversiones Inmoyield - v2.2"</i>, pestañas "2. Societario y Caja" y "3. Calendario de Pagos".<br>
   "Trinidad 67" aparece duplicada en el Sheet (Fase 1 y Fase 2 con datos idénticos) — se cuenta una sola vez en los totales de este dashboard hasta que se confirme con el equipo si son dos tramos reales o un error de captura.<br>
   Este es un snapshot. Se actualiza según la periodicidad configurada (ver cabecera).
 </footer>
@@ -430,6 +431,12 @@ renderChanges('semana');
 // Treasury panel (parameterized so a historical snapshot's treasury data can be shown too)
 function renderTreasuryPanel(t){
   t = t || {};
+  if (t.version === 2) return renderTreasuryV2(t);
+  document.getElementById('treasuryTitle').textContent = 'Tesorería y obligaciones de pago (pestaña "Obligaciones de Pago")';
+  document.getElementById('treasuryChartTitle').textContent = 'Margen de maniobra mensual estimado';
+  document.getElementById('treasuryListTitle').textContent = 'Próximos pagos concretos';
+  document.getElementById('treasuryWarnings').innerHTML = '';
+  document.getElementById('treasuryRefNote').style.display = '';
   const margen = Array.isArray(t.margenMensual) ? t.margenMensual : [];
   const deficitEntry = margen.find(m=>m.mes===t.mesDeficit);
   const kpis = [
@@ -468,6 +475,49 @@ function renderTreasuryPanel(t){
     </div>`).join('') : '<div style="color:var(--muted);font-size:12.5px;">Sin pagos concretos detectados.</div>';
 
   document.getElementById('treasuryRefDate').textContent = t.fechaReferencia || '—';
+}
+
+
+function escT(s){ return String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function renderTreasuryV2(t){
+  const fmtD = s => s ? s.slice(8,10)+'/'+s.slice(5,7) : '';
+  document.getElementById('treasuryTitle').textContent = 'Tesorería y calendario de pagos (BBDD v2.2)';
+  document.getElementById('treasuryChartTitle').textContent = 'Caja acumulada prudente (solo lo comprometido) · próximos 6 meses';
+  document.getElementById('treasuryListTitle').textContent = 'Pagos y cobros comprometidos';
+  const kpis = [
+    {label:'Caja total disponible', value: fmtEUR(t.cajaTotal), foot: 'Saldos Caixa + BBVA · ref. '+(t.fechaReferencia||'—')},
+    {label:'Cobros previstos 90 días', value: fmtEUR(t.cobros90d), foot:'incluye cobros aún no confirmados', cls:'green'},
+    {label:'Pagos comprometidos 90 días', value: fmtEUR(t.pagos90d), foot:'solo pagos con importe informado', cls:'red'},
+    {label:'Caja proyectada 90 días', value: fmtEUR(t.cajaProyectada90d), foot: t.mesDeficit ? 'déficit en '+t.mesDeficit : 'sin mes en negativo (lectura prudente)', cls: (t.cajaProyectada90d||0)<0?'red':''},
+  ];
+  document.getElementById('treasuryKpis').innerHTML = kpis.map(k=>`
+    <div class="kpi"><div class="label">${k.label}</div><div class="value ${k.cls||''}">${k.value}</div><div class="foot">${k.foot}</div></div>`).join('');
+  const meses = (t.meses||[]).slice(0,6);
+  if(!meses.length){
+    document.getElementById('treasuryChart').innerHTML = '<div style="color:var(--muted);font-size:12.5px;">Sin datos mensuales.</div>';
+  } else {
+    const maxAbs = Math.max(...meses.map(m=>Math.abs(m.cajaAcumulada||0)), 1);
+    document.getElementById('treasuryChart').innerHTML = meses.map(m=>{
+      const v = m.cajaAcumulada||0, neg = v<0, pct = Math.abs(v)/maxAbs*100;
+      return `<div class="bar-row" title="Cobros ${fmtEUR(m.cobros)} · Pagos ${fmtEUR(m.pagos)} · Neto ${fmtEUR(m.neto)}">
+        <div class="lbl">${m.mes}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${pct.toFixed(1)}%;background:${neg?'var(--red)':'var(--green)'}"></div></div>
+        <div class="bar-val" style="color:${neg?'var(--red)':'var(--green)'}">${fmtEUR(v)}</div></div>`;
+    }).join('');
+  }
+  const movs = t.movimientos||[];
+  document.getElementById('treasuryPayments').innerHTML = movs.length ? movs.map(m=>{
+    const v = m.importe, has = v!=null;
+    const shown = has ? fmtEUR(v) : (m.importeNota!=null ? '('+fmtEUR(m.importeNota)+')' : 's/importe');
+    const col = !has ? 'var(--muted)' : (v<0?'var(--red)':'var(--green)');
+    return `<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px dashed var(--border);">
+      <span>${m.fecha?'<b>'+fmtD(m.fecha)+'</b> · ':''}${escT(m.concepto)} <span style="color:var(--muted);font-size:11px;">${escT(m.estado||'')}${has?'':' · sin importe en origen'}</span></span>
+      <span style="color:${col};font-variant-numeric:tabular-nums;white-space:nowrap;">${shown}</span></div>`;
+  }).join('') : '<div style="color:var(--muted);font-size:12.5px;">Sin movimientos.</div>';
+  const av = t.avisos||[];
+  document.getElementById('treasuryWarnings').innerHTML = av.length ? `<div style="border:1px solid var(--border);border-left:3px solid var(--red);border-radius:6px;padding:10px 12px;font-size:12px;">
+    <div style="font-weight:600;margin-bottom:6px;">Avisos de calidad del dato en origen</div>${av.map(a=>'<div style="margin:3px 0;">• '+escT(a)+'</div>').join('')}</div>` : '';
+  document.getElementById('treasuryRefNote').style.display = 'none';
 }
 
 document.getElementById('search').addEventListener('input', renderTable);

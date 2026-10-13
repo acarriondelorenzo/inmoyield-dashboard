@@ -195,6 +195,69 @@
      "detalle": "Ya no aparece como 'Invertido' (antes 1.000.000 €)"
     },
     {
+     "tipo": "comentario",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"ver último informe\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Alcántara 62 (Mad-7)",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"arras firmadas para desinversión antes del 31Dic. por debajo de estimación\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Jerónimo Zurita, 3",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"ver último informe\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Trinidad 67",
+     "fase": "FASE 2",
+     "partner": "Re4M",
+     "detalle": "Nuevo comentario: \"15.06: Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. 25.09: Las modificaciones estructurales durante la reforma han supuesto un retraso que arrastrará la liquidación hasta principios del 2027\""
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "Carlet (15 viv.)",
+     "fase": "FASE 2",
+     "partner": "PropHero",
+     "detalle": "Importe invertido: 1.294.004 € → 1.372.025 €"
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "Castelló Rugat (18 viv.)",
+     "fase": "FASE 2",
+     "partner": "I.E.E.",
+     "detalle": "Importe invertido: 1.420.000 € → 1.570.000 €"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Castelló Rugat (18 viv.)",
+     "fase": "FASE 2",
+     "partner": "I.E.E.",
+     "detalle": "Nuevo comentario: \"25.09 estimación fin de obra para noviembre. La liquidación de la inversión se irá casi seguro a 2027\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"ver último informe\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Pantoja (Fase II)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"pendientes confirmadción del registro. plazo 60 días para escriturar\""
+    },
+    {
      "tipo": "importe",
      "proyecto": "Esquivias2 (7viv.)",
      "fase": "FASE 2",
@@ -203,10 +266,10 @@
     },
     {
      "tipo": "comentario",
-     "proyecto": "Alcántara 62 (Mad-7)",
-     "fase": "FASE 1",
-     "partner": "Domoblock",
-     "detalle": "Nuevo comentario: \"arras firmadas para desinversión antes del 31Dic. por debajo de estimación\""
+     "proyecto": "Edificio Puertollano (6 viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"siguiendo resolución judicial. pre-acuerdo para dar salida a Inm con la venta de Pantoja\""
     },
     {
      "tipo": "importe",
@@ -231,71 +294,8 @@
     },
     {
      "tipo": "comentario",
-     "proyecto": "Edificio Puertollano (6 viv.)",
-     "fase": "FASE 2",
-     "partner": "Sultan",
-     "detalle": "Nuevo comentario: \"siguiendo resolución judicial. pre-acuerdo para dar salida a Inm con la venta de Pantoja\""
-    },
-    {
-     "tipo": "importe",
-     "proyecto": "Castelló Rugat (18 viv.)",
-     "fase": "FASE 2",
-     "partner": "I.E.E.",
-     "detalle": "Importe invertido: 1.420.000 € → 1.570.000 €"
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Castelló Rugat (18 viv.)",
-     "fase": "FASE 2",
-     "partner": "I.E.E.",
-     "detalle": "Nuevo comentario: \"25.09 estimación fin de obra para noviembre. La liquidación de la inversión se irá casi seguro a 2027\""
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Castelló 120",
-     "fase": "FASE 1",
-     "partner": "Domoblock",
-     "detalle": "Nuevo comentario: \"ver último informe\""
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Jerónimo Zurita, 3",
-     "fase": "FASE 1",
-     "partner": "Domoblock",
-     "detalle": "Nuevo comentario: \"ver último informe\""
-    },
-    {
-     "tipo": "comentario",
      "proyecto": "Trinidad 67",
      "fase": "FASE 1",
-     "partner": "Re4M",
-     "detalle": "Nuevo comentario: \"15.06: Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. 25.09: Las modificaciones estructurales durante la reforma han supuesto un retraso que arrastrará la liquidación hasta principios del 2027\""
-    },
-    {
-     "tipo": "importe",
-     "proyecto": "Carlet (15 viv.)",
-     "fase": "FASE 2",
-     "partner": "PropHero",
-     "detalle": "Importe invertido: 1.294.004 € → 1.372.025 €"
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Edif. Pantoja (Fase II)",
-     "fase": "FASE 1",
-     "partner": "Sultan",
-     "detalle": "Nuevo comentario: \"pendientes confirmadción del registro. plazo 60 días para escriturar\""
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Modesto Lafuente 10",
-     "fase": "FASE 1",
-     "partner": "Domoblock",
-     "detalle": "Nuevo comentario: \"ver último informe\""
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Trinidad 67",
-     "fase": "FASE 2",
      "partner": "Re4M",
      "detalle": "Nuevo comentario: \"15.06: Se ha tramitado la licencia para uso turístico, lo que elevará el valor del activo. 25.09: Las modificaciones estructurales durante la reforma han supuesto un retraso que arrastrará la liquidación hasta principios del 2027\""
     },
