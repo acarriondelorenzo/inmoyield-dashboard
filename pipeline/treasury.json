@@ -2,14 +2,14 @@
  "version": 2,
  "fuente": "BBDD Inversiones Inmoyield - v2.2",
  "avisos": [
-  "Hay 424.000 € de capital invertido sin sociedad asignada (cuadre de 'Societario y Caja' distinto de 0).",
+  "Hay -0 € de capital invertido sin sociedad asignada (cuadre de 'Societario y Caja' distinto de 0).",
   "1 movimientos sin cifra en la columna Importe (no entran en la proyección): Esquivias - Inicio Obras (35%) (-140K). Neto según notas: -140.000 €",
   "Cobros no confirmados incluidos en la proyección: Onda — devolución de principal e intereses (170.000 €, Previsto); Liquidación Albal (1.283.500 €, Previsto)"
  ],
  "fechaReferencia": "2026-10-13",
  "cajaTotal": 416167.42,
- "capitalInvertido": 14053997.01,
- "bEstimadoPendiente": 2659136.323,
+ "capitalInvertido": 14477997.01,
+ "bEstimadoPendiente": 3779136.323,
  "cobros90d": 1453500.0,
  "pagos90d": -1060731.0,
  "cajaProyectada90d": 808936.42,
@@ -60,7 +60,7 @@
    "sociedad": "F Integradas 1",
    "fase": "Integradas",
    "caja": 1277.0,
-   "capitalInvertido": 0.0,
+   "capitalInvertido": 424000.0,
    "cajaProyectada90d": 1277.0
   },
   {
@@ -71,7 +71,7 @@
    "cajaProyectada90d": 2596.0
   }
  ],
- "capitalSinAsignar": 424000.0,
+ "capitalSinAsignar": -1.862645149e-09,
  "meses": [
   {
    "mes": "Octubre 2026",
