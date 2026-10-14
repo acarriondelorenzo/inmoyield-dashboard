@@ -113,8 +113,9 @@ def parse(path):
     if p:
         dif = num(next((sc.cell(p[0], c).value for c in range(p[1] + 1, sc.max_column + 1)
                         if num(sc.cell(p[0], c).value) is not None), None))
+        dif = round(dif) if dif is not None else None
         out["capitalSinAsignar"] = dif
-        if dif:
+        if dif and abs(dif) >= 1:
             out["avisos"].append(f"Hay {eur(dif)} de capital invertido sin sociedad asignada (cuadre de 'Societario y Caja' distinto de 0).")
 
     # --- Resumen mensual
@@ -171,7 +172,7 @@ def parse(path):
         tot = sum(m.get("importeNota", 0) for m in sin)
         out["sinImporteNeto"] = tot
         out["avisos"].append(
-            f"{len(sin)} movimientos sin cifra en la columna Importe (no entran en la proyección): "
+            f"{len(sin)} movimiento(s) solo en notas, sin importe firme (en el radar, fuera de la proyección): "
             + "; ".join(f"{m['concepto']} ({m['nota']})" if m.get("nota") else m["concepto"] for m in sin)
             + (f". Neto según notas: {eur(tot)}" if tot else ""))
     noconf = [m for m in movs if m["importe"] and m["importe"] > 0 and norm(m["estado"]) in ("previsto", "por confirmar")]
