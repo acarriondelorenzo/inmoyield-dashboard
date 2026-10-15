@@ -6,19 +6,19 @@
   "Cobros no confirmados incluidos en la proyección: Onda — devolución de principal e intereses (170.000 €, Previsto); Liquidación Albal (1.283.500 €, Previsto)"
  ],
  "fechaReferencia": "2026-10-13",
- "cajaTotal": 416167.42,
+ "cajaTotal": 415622.28,
  "capitalInvertido": 14477997.01,
  "bEstimadoPendiente": 3779136.323,
  "cobros90d": 1453500.0,
  "pagos90d": -1060731.0,
- "cajaProyectada90d": 808936.42,
+ "cajaProyectada90d": 808391.28,
  "sociedades": [
   {
    "sociedad": "Inmoyield 1",
    "fase": "Fase 1",
-   "caja": 1257.0,
+   "caja": 711.86,
    "capitalInvertido": 5175585.2,
-   "cajaProyectada90d": 1454757.0
+   "cajaProyectada90d": 1454211.86
   },
   {
    "sociedad": "Inmoyield 2",
@@ -78,8 +78,8 @@
    "cobros": 170000.0,
    "pagos": -862717.0,
    "neto": -692717.0,
-   "cajaAcumulada": -276549.58,
-   "cajaConVencimientos": 591527.7704
+   "cajaAcumulada": -277094.72,
+   "cajaConVencimientos": 590982.6304
   },
   {
    "mes": "Noviembre 2026",
@@ -87,8 +87,8 @@
    "cobros": 1283500.0,
    "pagos": -222014.0,
    "neto": 1061486.0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 5302813.77
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 5302268.63
   },
   {
    "mes": "Diciembre 2026",
@@ -96,8 +96,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 5790313.77
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 6674898.63
   },
   {
    "mes": "Enero 2027",
@@ -105,8 +105,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 5790313.77
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 6674898.63
   },
   {
    "mes": "Febrero 2027",
@@ -114,8 +114,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 6430313.77
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 7314898.63
   },
   {
    "mes": "Marzo 2027",
@@ -123,8 +123,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 6430313.77
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 7314898.63
   },
   {
    "mes": "Abril 2027",
@@ -132,8 +132,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 6430313.77
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 7314898.63
   },
   {
    "mes": "Mayo 2027",
@@ -141,8 +141,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 6430313.77
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 7314898.63
   },
   {
    "mes": "Junio 2027",
@@ -150,8 +150,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 8423861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 9308446.603
   },
   {
    "mes": "Julio 2027",
@@ -159,8 +159,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 8423861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 9308446.603
   },
   {
    "mes": "Agosto 2027",
@@ -168,8 +168,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 8423861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 9308446.603
   },
   {
    "mes": "Septiembre 2027",
@@ -177,8 +177,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Octubre 2027",
@@ -186,8 +186,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Noviembre 2027",
@@ -195,8 +195,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Diciembre 2027",
@@ -204,8 +204,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Enero 2028",
@@ -213,8 +213,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Febrero 2028",
@@ -222,8 +222,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Marzo 2028",
@@ -231,8 +231,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Abril 2028",
@@ -240,8 +240,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Mayo 2028",
@@ -249,8 +249,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 9967861.743
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 10852446.6
   },
   {
    "mes": "Junio 2028",
@@ -258,8 +258,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 11794351.24
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 12678936.1
   },
   {
    "mes": "Julio 2028",
@@ -267,8 +267,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 11794351.24
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 12678936.1
   },
   {
    "mes": "Agosto 2028",
@@ -276,8 +276,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 11794351.24
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 12678936.1
   },
   {
    "mes": "Septiembre 2028",
@@ -285,8 +285,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": 784936.42,
-   "cajaConVencimientos": 11794351.24
+   "cajaAcumulada": 784391.28,
+   "cajaConVencimientos": 12678936.1
   }
  ],
  "mesDeficit": "Octubre 2026",
@@ -342,17 +342,6 @@
    "nota": null
   },
   {
-   "fecha": "2026-11-01",
-   "concepto": "Esquivias - Inicio Obras (35%)",
-   "proyecto": null,
-   "sociedad": "Inmoyield 4",
-   "tipo": "Pago",
-   "importe": null,
-   "estado": "Por confirmar",
-   "nota": "-140K",
-   "importeNota": -140000.0
-  },
-  {
    "fecha": "2026-11-15",
    "concepto": "Esquivias (Provisión avance obras)",
    "proyecto": "Esquivias2 (7viv.)",
@@ -373,6 +362,17 @@
    "nota": "Liquidación estimada incluyendo retención del 19%"
   },
   {
+   "fecha": "2026-11-20",
+   "concepto": "Esquivias - Inicio Obras (35%)",
+   "proyecto": null,
+   "sociedad": "Inmoyield 4",
+   "tipo": "Pago",
+   "importe": null,
+   "estado": "Por confirmar",
+   "nota": "-140K",
+   "importeNota": -140000.0
+  },
+  {
    "fecha": "2026-11-25",
    "concepto": "Carlet — aportación noviembre",
    "proyecto": "Carlet (15 viv.)",
@@ -381,6 +381,26 @@
    "importe": -52014.0,
    "estado": "Comprometido",
    "nota": null
+  },
+  {
+   "fecha": null,
+   "concepto": "Cobro por adelanto a Unixa (Querella)",
+   "proyecto": "Querella Velzia",
+   "sociedad": "Inmoyield 3",
+   "tipo": "Cobro",
+   "importe": 6957.5,
+   "estado": "Comprometido",
+   "nota": "se pago el 100% desde Inm3 pero es 50-50 con I.1"
+  },
+  {
+   "fecha": null,
+   "concepto": "Pago por adelanto a Unixa (Querella)",
+   "proyecto": "Querella Velzia",
+   "sociedad": "Inmoyield 1",
+   "tipo": "Pago",
+   "importe": -6957.5,
+   "estado": "Comprometido",
+   "nota": "se pago el 100% desde Inm3 pero es 50-50 con I.1"
   }
  ],
  "sinImporteNeto": -140000.0
