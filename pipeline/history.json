@@ -1,39 +1,6 @@
 {
  "log": [
   {
-   "fecha": "2026-09-16",
-   "cambios": [
-    {
-     "tipo": "nuevo_detectado",
-     "proyecto": "Edificio Bétera 11 viv.",
-     "fase": "FASE 1",
-     "partner": "J.Pascual & N.Blat",
-     "detalle": "Aparece en cartera activa por 300.000 €"
-    },
-    {
-     "tipo": "nuevo_detectado",
-     "proyecto": "Génôva 23",
-     "fase": "FASE 1",
-     "partner": "Velzia",
-     "detalle": "Aparece en cartera activa por 250.000 €"
-    },
-    {
-     "tipo": "ya_no_activa",
-     "proyecto": "Edificio Aétera 11 viv.",
-     "fase": "FASE 1",
-     "partner": "J.Pascual & N.Blat",
-     "detalle": "Ya no aparece como 'Invertido' (antes 300.000 €)"
-    },
-    {
-     "tipo": "ya_no_activa",
-     "proyecto": "Génóva 23",
-     "fase": "FASE 1",
-     "partner": "Velzia",
-     "detalle": "Ya no aparece como 'Invertido' (antes 250.000 €)"
-    }
-   ]
-  },
-  {
    "fecha": "2026-09-17",
    "cambios": [
     {
@@ -232,6 +199,39 @@
      "fase": "FASE 2",
      "partner": "Sultan",
      "detalle": "Nuevo comentario: \"pendientes confirmadción del registro. plazo 60 días para escriturar\""
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-16",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "O Donell 18",
+     "fase": "FASE 2",
+     "partner": "Velzia",
+     "detalle": "Nuevo comentario: \"Sujeto a propuesta de plan de reestructuración de Velzia\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"inundación desde el piso superior retrasó comercialización. Ligero ajuste del precio de salida. Tipo fijo del 14% activado. Preguntado por posibilidad de rebaja del tipo fijo.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"Ligero ajuste del precio de salida. Tipo fijo del 14% activado. Preguntado por posibilidad de rebaja del tipo fijo.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Jerónimo Zurita, 3",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"en comercialización. sin ajuste de precio. estuvo cerca de cierre en agosto.\""
     }
    ]
   }
