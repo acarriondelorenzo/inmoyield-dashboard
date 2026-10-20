@@ -212,7 +212,7 @@
 </main>
 
 <footer>
-  Fuente: Google Drive INMOYIELD → carpeta "00 INVERSIONES" → hoja <i>"Pipeline y BBDD Inversiones Inmoyield"</i>. Pestaña "BBDD INVERSIONES" (lectura del __SOURCE_DATE__), filtrado por Estado = "Invertido" (excluye "En Estudio", "Pasada" y "Descarte") · Tesorería: archivo <i>"BBDD Inversiones Inmoyield - v2.2"</i>, pestañas "2. Societario y Caja" y "3. Calendario de Pagos".<br>
+  Fuente: Google Drive INMOYIELD → hoja <i>"BBDD Inversiones Inmoyield - Clean"</i>. Pestaña "BBDD" (lectura del __SOURCE_DATE__), filtrado por Estado = "Invertido" (excluye "En Estudio", "Pasada" y "Descarte") · Pestaña "Caja y Calendario" para el panel de tesorería.<br>
   "Trinidad 67" aparece duplicada en el Sheet (Fase 1 y Fase 2 con datos idénticos) — se cuenta una sola vez en los totales de este dashboard hasta que se confirme con el equipo si son dos tramos reales o un error de captura.<br>
   Este es un snapshot. Se actualiza según la periodicidad configurada (ver cabecera).
 </footer>
@@ -481,7 +481,7 @@ function renderTreasuryPanel(t){
 function escT(s){ return String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function renderTreasuryV2(t){
   const fmtD = s => s ? s.slice(8,10)+'/'+s.slice(5,7) : '';
-  document.getElementById('treasuryTitle').textContent = 'Tesorería y calendario de pagos (BBDD v2.2)';
+  document.getElementById('treasuryTitle').textContent = 'Tesorería y calendario de pagos' + (t.fuente && t.fuente.includes('Clean') ? '' : ' (BBDD v2.2)');
   document.getElementById('treasuryChartTitle').textContent = 'Caja acumulada prudente (solo lo comprometido) · próximos 6 meses';
   document.getElementById('treasuryListTitle').textContent = 'Pagos y cobros comprometidos';
   const kpis = [

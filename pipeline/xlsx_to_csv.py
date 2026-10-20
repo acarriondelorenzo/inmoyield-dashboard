@@ -49,7 +49,8 @@ def fmt(v, nf):
         nf = nf or "General"
         if "%" in nf:
             m = re.search(r"0\.(0+)%", nf)
-            return es_num(v * 100, len(m.group(1)) if m else 0) + "%"
+            # mínimo 2 decimales: evita "cambios" falsos de TIR/ROI si el formato de la hoja cambia de 2 a 1 decimal
+            return es_num(v * 100, max(2, len(m.group(1)) if m else 0)) + "%"
         m = re.search(r"0\.(0+)", nf)
         dec = len(m.group(1)) if m else 0
         if nf == "General":
