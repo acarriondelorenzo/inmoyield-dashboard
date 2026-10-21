@@ -64,6 +64,7 @@
   .badge.green{background:#e5f6ec;color:var(--green);}
   .badge.amber{background:#fdf1de;color:var(--amber);}
   .badge.red{background:#fbe7e4;color:var(--red);}
+  .badge.sit{background:#eef1f6;color:#3d4a5c;font-weight:500;white-space:normal;}
   .progress{width:70px;height:7px;background:#eef1f6;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:6px;}
   .progress i{display:block;height:100%;background:var(--gold);}
   .comment{max-width:230px;font-size:11.5px;color:var(--muted);}
@@ -84,6 +85,7 @@
   .change-tag.comentario{background:#fdf1de;color:var(--amber);}
   .change-tag.tir{background:#f3e8fb;color:#7b3ec4;}
   .change-tag.ya_no_activa{background:#fbe7e4;color:var(--red);}
+  .change-tag.situacion{background:#eef1f6;color:#3d4a5c;}
   .change-note{color:var(--muted);font-size:11px;font-style:italic;margin-top:2px;}
 </style>
 </head>
@@ -198,6 +200,7 @@
           <th class="num" data-k="importe">Importe</th>
           <th data-k="fechaInicio">Inicio</th>
           <th data-k="estFin0">Est. liquidación</th>
+          <th data-k="situacion">Situación</th>
           <th data-k="_status">Plazo</th>
           <th class="num" data-k="pctEjecucion">% Ejec.</th>
           <th class="num" data-k="estTIR">TIR est.</th>
@@ -359,7 +362,7 @@ function renderTable(){
     if(ft && r.tipologia!==ft) return false;
     if(fe && r._status!==fe) return false;
     if(q){
-      const hay = (r.proyecto+' '+r.partner+' '+(r.provincia||'')+' '+(r.municipio||'')).toLowerCase();
+      const hay = (r.proyecto+' '+r.partner+' '+(r.provincia||'')+' '+(r.municipio||'')+' '+(r.situacion||'')).toLowerCase();
       if(!hay.includes(q)) return false;
     }
     return true;
@@ -382,6 +385,7 @@ function renderTable(){
       <td class="num">${fmtEUR(r.importe)}</td>
       <td>${r.fechaInicio||'—'}</td>
       <td>${r.estFin0||'—'}${r.estFin1 && r.estFin1!==r.estFin0 ? ' → '+r.estFin1 : ''}</td>
+      <td>${r.situacion?'<span class="badge sit">'+r.situacion+'</span>':'<span style="color:var(--muted)">—</span>'}</td>
       <td><span class="badge ${st.k}">${st.label}${st.detail?' · '+st.detail:''}</span></td>
       <td class="num"><span class="progress"><i style="width:${Math.min(r.pctEjecucion||0,100)}%"></i></span>${r.pctEjecucion!=null?r.pctEjecucion.toFixed(0)+'%':'—'}</td>
       <td class="num tir">${fmtPct(r.estTIR)}</td>
@@ -404,7 +408,7 @@ function renderAll(dataset){
 }
 
 // Changelog panel
-const tagLabels = {nuevo_detectado:'Nuevo', importe:'Importe', comentario:'Update', tir:'TIR', ya_no_activa:'Salida'};
+const tagLabels = {nuevo_detectado:'Nuevo', importe:'Importe', comentario:'Update', tir:'TIR', ya_no_activa:'Salida', situacion:'Situación'};
 function renderChanges(windowKey){
   document.getElementById('btnWeek').classList.toggle('active', windowKey==='semana');
   document.getElementById('btnMonth').classList.toggle('active', windowKey==='mes');

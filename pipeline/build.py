@@ -16,7 +16,9 @@ EXPECTED_COLUMNS = [
     ("Est. Fin0", "EstFin0"), ("Retraso", "Retraso"), ("Est. Fin1", "EstFin1"),
     ("% Ejecución", "PctEjecucion"), ("Est. TIR", "EstTIR"), ("Est. ROI", "EstROI"),
     ("Meses", "Meses"), ("TIR", "TIR"), ("ROI", "ROI"), ("Link", "Link"),
-    ("Estado", "Estado"), ("Comentarios", "Comentarios"),
+    ("Estado", "Estado"), ("Situación actual", "Situacion"), ("Comentarios", "Comentarios"),
+    # columnas auxiliares de fórmulas en la hoja "Clean" (no se muestran)
+    ("aux vivos", "AuxVivos"), ("aux liquidadas", "AuxLiquidadas"),
 ]
 # columns without which we cannot reliably build the active-investments table;
 # if any of these can't be located by name in the actual header row, abort
@@ -143,6 +145,7 @@ def parse_csv(csv_path):
             "pctEjecucion": clean_pct(g(cells, 'PctEjecucion')),
             "estTIR": clean_pct(g(cells, 'EstTIR')), "estROI": clean_pct(g(cells, 'EstROI')),
             "meses": g(cells, 'Meses').strip() or None,
+            "situacion": g(cells, 'Situacion').strip(),
             "comentarios": g(cells, 'Comentarios').strip(),
             "flags": []
         })
@@ -220,6 +223,10 @@ def diff_changelog(old_rows, new_rows):
         if (o['comentarios'] or '').strip() != (n['comentarios'] or '').strip() and n['comentarios']:
             changes.append({"tipo": "comentario", "proyecto": n['proyecto'], "fase": n['fase'], "partner": n['partner'],
                              "detalle": f"Nuevo comentario: \"{n['comentarios']}\""})
+        if (o.get('situacion') or '').strip() != (n.get('situacion') or '').strip() and n.get('situacion') \
+                and 'situacion' in o:  # no generar ruido el primer día que existe el campo
+            changes.append({"tipo": "situacion", "proyecto": n['proyecto'], "fase": n['fase'], "partner": n['partner'],
+                             "detalle": f"Situación: {o.get('situacion') or '—'} → {n['situacion']}"})
         if o['estTIR'] != n['estTIR']:
             changes.append({"tipo": "tir", "proyecto": n['proyecto'], "fase": n['fase'], "partner": n['partner'],
                              "detalle": f"TIR estimada: {o['estTIR']}% → {n['estTIR']}%"})

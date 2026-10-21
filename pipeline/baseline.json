@@ -21,6 +21,7 @@
   "estTIR": 35.0,
   "estROI": 50.0,
   "meses": "11,4",
+  "situacion": "Vendido",
   "comentarios": "03.07 Arras firmadas para escritura a fecha max. 16 nov.",
   "flags": []
  },
@@ -46,6 +47,7 @@
   "estTIR": 15.0,
   "estROI": 10.9,
   "meses": "9,0",
+  "situacion": "Comercialización",
   "comentarios": "Adenda para convertir demora en ordinario con plazo max Dic26.",
   "flags": []
  },
@@ -71,6 +73,7 @@
   "estTIR": 15.0,
   "estROI": 11.25,
   "meses": "9,0",
+  "situacion": "",
   "comentarios": "",
   "flags": []
  },
@@ -96,6 +99,7 @@
   "estTIR": 14.06,
   "estROI": 8.43,
   "meses": "8,1",
+  "situacion": "",
   "comentarios": "arras firmadas para desinversión antes del 31Dic. por debajo de estimación",
   "flags": []
  },
@@ -121,6 +125,7 @@
   "estTIR": 17.21,
   "estROI": 11.23,
   "meses": "7,9",
+  "situacion": "",
   "comentarios": "ver último informe",
   "flags": []
  },
@@ -146,6 +151,7 @@
   "estTIR": 14.78,
   "estROI": 14.78,
   "meses": "11,5",
+  "situacion": "",
   "comentarios": "",
   "flags": []
  },
@@ -171,6 +177,7 @@
   "estTIR": 20.0,
   "estROI": 10.0,
   "meses": "4,7",
+  "situacion": "Enviado al registro",
   "comentarios": "20.10 Inscripción en registro completada. Enviadas notas simples a PropHero para cerrar arras.",
   "flags": []
  },
@@ -196,6 +203,7 @@
   "estTIR": 25.0,
   "estROI": 25.0,
   "meses": "11,7",
+  "situacion": "",
   "comentarios": "Pago aplazado (100K) retrasado hasta máximo 22 de junio",
   "flags": []
  },
@@ -221,6 +229,7 @@
   "estTIR": 12.0,
   "estROI": 6.81,
   "meses": "5,4",
+  "situacion": "",
   "comentarios": "ver último informe",
   "flags": []
  },
@@ -246,6 +255,7 @@
   "estTIR": 18.0,
   "estROI": 13.25,
   "meses": "7,8",
+  "situacion": "",
   "comentarios": "Cobrados ordinarios. Mantenemos principal a tipo demora (18%)",
   "flags": []
  },
@@ -271,6 +281,7 @@
   "estTIR": 15.0,
   "estROI": 9.66,
   "meses": "7,5",
+  "situacion": "",
   "comentarios": "ver último informe",
   "flags": []
  },
@@ -296,6 +307,7 @@
   "estTIR": 52.0,
   "estROI": 52.0,
   "meses": "12,0",
+  "situacion": "Presentada división horizontal",
   "comentarios": "",
   "flags": []
  },
@@ -321,6 +333,7 @@
   "estTIR": 52.0,
   "estROI": 52.0,
   "meses": "11,3",
+  "situacion": "Presentada división horizontal",
   "comentarios": "Reducción de 18.150€ de principal el 23.06.26",
   "flags": []
  },
@@ -346,6 +359,7 @@
   "estTIR": 18.0,
   "estROI": 14.0,
   "meses": "9,0",
+  "situacion": "",
   "comentarios": "13.07 Informe Actualización",
   "flags": []
  },
@@ -371,6 +385,7 @@
   "estTIR": 40.0,
   "estROI": 30.0,
   "meses": "9,0",
+  "situacion": "Fase final de obra",
   "comentarios": "10 de 18 uds. en arras.",
   "flags": []
  },
@@ -396,6 +411,7 @@
   "estTIR": 25.0,
   "estROI": 6.25,
   "meses": null,
+  "situacion": "Enviado al registro",
   "comentarios": "20.10 Inscripción en registro completada. Enviadas notas simples a PropHero para cerrar arras.",
   "flags": []
  },
@@ -421,6 +437,7 @@
   "estTIR": 25.0,
   "estROI": 25.0,
   "meses": "6,0",
+  "situacion": "",
   "comentarios": "Co-inversión en tramo 2",
   "flags": []
  },
@@ -446,6 +463,7 @@
   "estTIR": 42.5,
   "estROI": 16.52,
   "meses": "4,7",
+  "situacion": "",
   "comentarios": "20.10 Deudor acaba de realizar una oferta para dación en pago por 50K. Pendiente estudio.",
   "flags": []
  },
@@ -471,6 +489,7 @@
   "estTIR": 45.0,
   "estROI": 51.0,
   "meses": "12,2",
+  "situacion": "",
   "comentarios": "Ingresos alq: 1.548,23",
   "flags": []
  },
@@ -496,6 +515,7 @@
   "estTIR": 36.0,
   "estROI": 21.0,
   "meses": "8,0",
+  "situacion": "Obra en curso",
   "comentarios": "Retrasos durante la ejecución debido a contingencias técnicas durante los trabajos de rehabilitación y demolición. Obtención de licencia para uso turístico.",
   "flags": [
    "Coincide con 1 fila(s) adicional(es) de 'Trinidad 67' en otra Fase con importe/fecha/comentario idénticos. Puede ser una co-inversión legítima repartida entre Fases/vehículos (p. ej. Trinidad 67) o un duplicado de carga -> no se descarta del cómputo; verificar con el equipo si aplica a este proyecto en concreto."
@@ -523,6 +543,7 @@
   "estTIR": 45.41,
   "estROI": 34.06,
   "meses": "10,0",
+  "situacion": "",
   "comentarios": "",
   "flags": []
  },
@@ -548,6 +569,7 @@
   "estTIR": 38.0,
   "estROI": 28.0,
   "meses": "9,0",
+  "situacion": "",
   "comentarios": "",
   "flags": []
  },
@@ -573,6 +595,7 @@
   "estTIR": 36.0,
   "estROI": 21.0,
   "meses": "7,5",
+  "situacion": "Obra en curso",
   "comentarios": "Retrasos durante la ejecución debido a contingencias técnicas durante los trabajos de rehabilitación y demolición. Obtención de licencia para uso turístico.",
   "flags": [
    "Coincide con 1 fila(s) adicional(es) de 'Trinidad 67' en otra Fase con importe/fecha/comentario idénticos. Puede ser una co-inversión legítima repartida entre Fases/vehículos (p. ej. Trinidad 67) o un duplicado de carga -> no se descarta del cómputo; verificar con el equipo si aplica a este proyecto en concreto."
@@ -600,6 +623,7 @@
   "estTIR": 23.62,
   "estROI": 21.7,
   "meses": "14,0",
+  "situacion": "",
   "comentarios": "30.08 visita in situ. obra avanza a muy buen ritmo. confiamos en superar tiempos estimados iniciales.",
   "flags": []
  },
@@ -625,6 +649,7 @@
   "estTIR": 23.62,
   "estROI": 21.7,
   "meses": "12,0",
+  "situacion": "",
   "comentarios": "30.08 visita in situ. obra avanza a muy buen ritmo. confiamos en superar tiempos estimados iniciales.",
   "flags": []
  },
@@ -650,6 +675,7 @@
   "estTIR": 18.0,
   "estROI": 35.0,
   "meses": "17,0",
+  "situacion": "",
   "comentarios": "11.983,56 € de intereses demora (clausula 1)",
   "flags": []
  },
@@ -675,6 +701,7 @@
   "estTIR": 18.0,
   "estROI": 35.0,
   "meses": "23,3",
+  "situacion": "",
   "comentarios": "17.975,34 € de intereses demora (clausula 1)",
   "flags": []
  },
@@ -700,6 +727,7 @@
   "estTIR": 38.0,
   "estROI": 25.0,
   "meses": null,
+  "situacion": "",
   "comentarios": "Escriturado el 17.09",
   "flags": []
  },
@@ -725,6 +753,7 @@
   "estTIR": 38.0,
   "estROI": 25.0,
   "meses": null,
+  "situacion": "",
   "comentarios": "Escriturado el 17.09",
   "flags": []
  },
@@ -750,6 +779,7 @@
   "estTIR": 49.0,
   "estROI": 49.0,
   "meses": "12,0",
+  "situacion": "",
   "comentarios": "",
   "flags": []
  },
@@ -775,6 +805,7 @@
   "estTIR": 49.0,
   "estROI": 49.0,
   "meses": "12,0",
+  "situacion": "",
   "comentarios": "",
   "flags": []
  },
@@ -800,6 +831,7 @@
   "estTIR": 0.0,
   "estROI": 0.0,
   "meses": "25,3",
+  "situacion": "",
   "comentarios": "Intereses cobrados: 56.666,66 € en 2025 y 18.958 € en 2026",
   "flags": []
  },
@@ -825,6 +857,7 @@
   "estTIR": 0.0,
   "estROI": 0.0,
   "meses": null,
+  "situacion": "",
   "comentarios": "Intercambiado desde San Lucas (Velzia)",
   "flags": []
  },
@@ -850,6 +883,7 @@
   "estTIR": 0.0,
   "estROI": 0.0,
   "meses": null,
+  "situacion": "",
   "comentarios": "Reinversión del PDL M. Pidal + préstamo a tipo fijo, reconvertido en deuda de Napala.",
   "flags": []
  },
@@ -875,6 +909,7 @@
   "estTIR": 0.0,
   "estROI": 0.0,
   "meses": null,
+  "situacion": "Comercialización",
   "comentarios": "Crédito proveniente de la conversión a clase B de las co-inversiones de Joselito23, M. Molina22, Génova23 y San Lucas5",
   "flags": []
  },
@@ -900,6 +935,7 @@
   "estTIR": 0.0,
   "estROI": 0.0,
   "meses": null,
+  "situacion": "Comercialización",
   "comentarios": "Crédito proveniente de la conversión a clase B de la co-inversión de O´Donell. (Los 19.458 € restantes fueron añadidos como participación adicional a las posiciones de Inm3(F2) en Napala.",
   "flags": []
  }
