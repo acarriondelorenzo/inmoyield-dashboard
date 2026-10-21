@@ -75,7 +75,8 @@
    "pagos": -68717.0,
    "neto": -68717.0,
    "cajaAcumulada": 86425.28,
-   "cajaConVencimientos": 86425.28
+   "cajaConVencimientos": 86425.28,
+   "cajaConFirmes": 86425.28
   },
   {
    "mes": "Noviembre 2026",
@@ -84,7 +85,8 @@
    "pagos": -1028971.5,
    "neto": -852014.0,
    "cajaAcumulada": -765588.72,
-   "cajaConVencimientos": 951211.28
+   "cajaConVencimientos": 951211.28,
+   "cajaConFirmes": 284411.28
   },
   {
    "mes": "Diciembre 2026",
@@ -93,7 +95,8 @@
    "pagos": -37970.0,
    "neto": 159209.0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 7522564.89
+   "cajaConVencimientos": 7522564.89,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Enero 2027",
@@ -102,7 +105,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 7522564.89
+   "cajaConVencimientos": 7522564.89,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Febrero 2027",
@@ -111,7 +115,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 9822624.89
+   "cajaConVencimientos": 9822624.89,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Marzo 2027",
@@ -120,7 +125,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 9822624.89
+   "cajaConVencimientos": 9822624.89,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Abril 2027",
@@ -129,7 +135,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 9822624.89
+   "cajaConVencimientos": 9822624.89,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Mayo 2027",
@@ -138,7 +145,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 9822624.89
+   "cajaConVencimientos": 9822624.89,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Junio 2027",
@@ -147,7 +155,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 12828672.86
+   "cajaConVencimientos": 12828672.86,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Julio 2027",
@@ -156,7 +165,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 12828672.86
+   "cajaConVencimientos": 12828672.86,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Agosto 2027",
@@ -165,7 +175,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 12828672.86
+   "cajaConVencimientos": 12828672.86,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Septiembre 2027",
@@ -174,7 +185,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Octubre 2027",
@@ -183,7 +195,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Noviembre 2027",
@@ -192,7 +205,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Diciembre 2027",
@@ -201,7 +215,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Enero 2028",
@@ -210,7 +225,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Febrero 2028",
@@ -219,7 +235,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Marzo 2028",
@@ -228,7 +245,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Abril 2028",
@@ -237,7 +255,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Mayo 2028",
@@ -246,7 +265,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 13830664.11
+   "cajaConVencimientos": 13830664.11,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Junio 2028",
@@ -255,7 +275,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 16721055.85
+   "cajaConVencimientos": 16721055.85,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Julio 2028",
@@ -264,7 +285,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 16721055.85
+   "cajaConVencimientos": 16721055.85,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Agosto 2028",
@@ -273,7 +295,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 16721055.85
+   "cajaConVencimientos": 16721055.85,
+   "cajaConFirmes": 443620.28
   },
   {
    "mes": "Septiembre 2028",
@@ -282,7 +305,8 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -606379.72,
-   "cajaConVencimientos": 16721055.85
+   "cajaConVencimientos": 16721055.85,
+   "cajaConFirmes": 443620.28
   }
  ],
  "mesDeficit": "Noviembre 2026",
@@ -409,6 +433,16 @@
    "nota": null
   }
  ],
+ "salidasFirmes": [
+  {
+   "fecha": "2026-11-01",
+   "proyecto": "Albal",
+   "situacion": "Vendido",
+   "total": 1050000.0
+  }
+ ],
+ "mesDeficitConFirmes": null,
+ "minCajaConFirmes": 86425.28,
  "cobros90d": 374136.5,
  "pagos90d": -1135658.5,
  "cajaProyectada90d": -606379.72

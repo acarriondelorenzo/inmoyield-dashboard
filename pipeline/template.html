@@ -486,13 +486,16 @@ function escT(s){ return String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;
 function renderTreasuryV2(t){
   const fmtD = s => s ? s.slice(8,10)+'/'+s.slice(5,7) : '';
   document.getElementById('treasuryTitle').textContent = 'Tesorería y calendario de pagos' + (t.fuente && t.fuente.includes('Clean') ? '' : ' (BBDD v2.2)');
-  document.getElementById('treasuryChartTitle').textContent = 'Caja acumulada prudente (solo lo comprometido) · próximos 6 meses';
+  const hasF = Array.isArray(t.salidasFirmes);
+  document.getElementById('treasuryChartTitle').innerHTML = hasF
+    ? 'Caja acumulada · próximos 6 meses <span style="text-transform:none;letter-spacing:0;">— barra gruesa: prudente (solo comprometido) · barra fina: + salidas firmes («Vendido»)</span>'
+    : 'Caja acumulada prudente (solo lo comprometido) · próximos 6 meses';
   document.getElementById('treasuryListTitle').textContent = 'Pagos y cobros comprometidos';
   const kpis = [
     {label:'Caja total disponible', value: fmtEUR(t.cajaTotal), foot: 'Saldos Caixa + BBVA · ref. '+(t.fechaReferencia||'—')},
     {label:'Cobros previstos 90 días', value: fmtEUR(t.cobros90d), foot:'incluye cobros aún no confirmados', cls:'green'},
     {label:'Pagos comprometidos 90 días', value: fmtEUR(t.pagos90d), foot:'solo pagos con importe informado', cls:'red'},
-    {label:'Caja proyectada 90 días', value: fmtEUR(t.cajaProyectada90d), foot: t.mesDeficit ? 'déficit en '+t.mesDeficit : 'sin mes en negativo (lectura prudente)', cls: (t.cajaProyectada90d||0)<0?'red':''},
+    {label:'Caja proyectada 90 días', value: fmtEUR(t.cajaProyectada90d), foot: (t.mesDeficit ? 'prudente: déficit en '+t.mesDeficit : 'prudente: sin mes en negativo') + (Array.isArray(t.salidasFirmes) ? ' · con salidas firmes: ' + (t.mesDeficitConFirmes ? 'déficit en '+t.mesDeficitConFirmes : 'sin déficit') : ''), cls: (t.cajaProyectada90d||0)<0?'red':''},
   ];
   document.getElementById('treasuryKpis').innerHTML = kpis.map(k=>`
     <div class="kpi"><div class="label">${k.label}</div><div class="value ${k.cls||''}">${k.value}</div><div class="foot">${k.foot}</div></div>`).join('');
@@ -500,14 +503,19 @@ function renderTreasuryV2(t){
   if(!meses.length){
     document.getElementById('treasuryChart').innerHTML = '<div style="color:var(--muted);font-size:12.5px;">Sin datos mensuales.</div>';
   } else {
-    const maxAbs = Math.max(...meses.map(m=>Math.abs(m.cajaAcumulada||0)), 1);
+    const maxAbs = Math.max(...meses.map(m=>Math.max(Math.abs(m.cajaAcumulada||0), Math.abs(m.cajaConFirmes||0))), 1);
     document.getElementById('treasuryChart').innerHTML = meses.map(m=>{
       const v = m.cajaAcumulada||0, neg = v<0, pct = Math.abs(v)/maxAbs*100;
+      const f = m.cajaConFirmes, fneg = f<0, fpct = Math.abs(f||0)/maxAbs*100;
+      const second = (hasF && f!=null) ? `<div class="bar-row" style="margin-top:-4px;">
+        <div class="lbl" style="font-size:10.5px;color:var(--muted);">+ firmes</div>
+        <div class="bar-track" style="height:5px;"><div class="bar-fill" style="height:5px;width:${fpct.toFixed(1)}%;background:${fneg?'var(--red)':'var(--green)'};opacity:.55"></div></div>
+        <div class="bar-val" style="font-size:11px;color:${fneg?'var(--red)':'var(--green)'}">${fmtEUR(f)}</div></div>` : '';
       return `<div class="bar-row" title="Cobros ${fmtEUR(m.cobros)} · Pagos ${fmtEUR(m.pagos)} · Neto ${fmtEUR(m.neto)}">
         <div class="lbl">${m.mes}</div>
         <div class="bar-track"><div class="bar-fill" style="width:${pct.toFixed(1)}%;background:${neg?'var(--red)':'var(--green)'}"></div></div>
-        <div class="bar-val" style="color:${neg?'var(--red)':'var(--green)'}">${fmtEUR(v)}</div></div>`;
-    }).join('');
+        <div class="bar-val" style="color:${neg?'var(--red)':'var(--green)'}">${fmtEUR(v)}</div></div>${second}`;
+    }).join('') + (hasF && t.salidasFirmes.length ? `<div style="font-size:11px;color:var(--muted);margin-top:6px;">Salidas firmes incluidas: ${t.salidasFirmes.map(s=>escT(s.proyecto)+' ('+fmtEUR(s.total)+', '+s.fecha.slice(5,7)+'/'+s.fecha.slice(0,4)+')').join('; ')}</div>` : '');
   }
   const movs = t.movimientos||[];
   document.getElementById('treasuryPayments').innerHTML = movs.length ? movs.map(m=>{
@@ -520,7 +528,7 @@ function renderTreasuryV2(t){
   }).join('') : '<div style="color:var(--muted);font-size:12.5px;">Sin movimientos.</div>';
   const av = t.avisos||[];
   document.getElementById('treasuryWarnings').innerHTML = av.length ? `<div style="border:1px solid var(--border);border-left:3px solid var(--red);border-radius:6px;padding:10px 12px;font-size:12px;">
-    <div style="font-weight:600;margin-bottom:6px;">Avisos de calidad del dato en origen</div>${av.map(a=>'<div style="margin:3px 0;">• '+escT(a)+'</div>').join('')}</div>` : '';
+    <div style="font-weight:600;margin-bottom:6px;">Avisos de tesorería y calidad del dato</div>${av.map(a=>'<div style="margin:3px 0;">• '+escT(a)+'</div>').join('')}</div>` : '';
   document.getElementById('treasuryRefNote').style.display = 'none';
 }
 

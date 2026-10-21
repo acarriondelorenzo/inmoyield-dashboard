@@ -131,6 +131,34 @@ def parse(path):
     movs.sort(key=lambda m: (m["fecha"] or "9999", m["concepto"]))
     out["movimientos"] = movs
 
+    # --- Vencimientos de proyectos vivos: salidas "firmes" (Situación actual = Vendido)
+    FIRMES = {"vendido"}
+    p = find(ws, "Fecha est. salida")
+    venc = []
+    if p:
+        h = header_map(ws, p[0])
+        r = p[0] + 1
+        while r <= ws.max_row:
+            proj = ws.cell(r, h.get("proyecto", 3)).value
+            first = norm(ws.cell(r, 1).value)
+            if first.startswith("total"):
+                break
+            if proj not in (None, ""):
+                d = ws.cell(r, p[1]).value
+                venc.append({"fecha": iso(d) if isinstance(d, (datetime.date, datetime.datetime)) else None,
+                             "proyecto": str(proj).strip(),
+                             "situacion": ws.cell(r, h.get("situación actual", 5)).value,
+                             "total": num(ws.cell(r, h.get("total a cobrar", 8)).value) or 0})
+            r += 1
+    firmes = [v for v in venc if norm(v["situacion"]) in FIRMES and v["fecha"]]
+    out["salidasFirmes"] = firmes
+    for m in meses:
+        acum = sum(v["total"] for v in firmes if v["fecha"][:7] <= m["iso"])
+        m["cajaConFirmes"] = (m["cajaAcumulada"] or 0) + acum
+    negf = next((m for m in meses if m["cajaConFirmes"] < 0), None)
+    out["mesDeficitConFirmes"] = negf["mes"] if negf else None
+    out["minCajaConFirmes"] = min((m["cajaConFirmes"] for m in meses), default=None)
+
     # --- 90 días: calculado de forma transparente desde los movimientos con fecha
     lim = (refd + datetime.timedelta(days=90)).isoformat()
     en90 = [m for m in movs if m["fecha"] and m["fecha"] <= lim and m["importe"] is not None and norm(m["estado"]) != "pagado"]
