@@ -2,12 +2,7 @@
  "version": 2,
  "fuente": "BBDD Inversiones Inmoyield - Clean",
  "avisos": [
-  "La caja prudente entra en negativo en Noviembre 2026 (-734.589 €); mínimo del horizonte: -734.589 €.",
-  "La «Caja + cobros - pagos 90 d» del cuadro por sociedad (-485.589 €) no coincide con la suma de los movimientos a 90 días (-575.380 €); suele deberse a movimientos sin sociedad o con un nombre de sociedad que no existe.",
-  "Movimientos sin fecha (no entran en el calendario): Cobro por adelanto a Unixa (Querella) (6.958 €); Pago por adelanto a Unixa (Querella) (-6.958 €)",
-  "Movimientos sin sociedad asignada: Favara (-225.000 €); Carlet - cobro arras (197.179 €); Carlet - diciembre (-37.970 €)",
-  "Movimientos con una sociedad que no existe en el cuadro: Favara → «Inmoyield Fases Integradas 2»",
-  "Importe y nota no coinciden: Devolución Nacho / Bafi (importe -520.000 €, nota «770k»)",
+  "La caja prudente entra en negativo en Noviembre 2026 (-765.589 €); mínimo del horizonte: -765.589 €.",
   "Cobros no confirmados incluidos en la proyección a 90 días: Onda — devolución de principal e intereses (170.000 €, Previsto); Carlet - cobro arras (197.179 €, Previsto)"
  ],
  "fechaReferencia": "2026-10-20",
@@ -17,7 +12,7 @@
    "fase": "Fase 1",
    "caja": 711.86,
    "capitalInvertido": 5175584.94,
-   "cajaProyectada90d": 170711.86
+   "cajaProyectada90d": 163754.36
   },
   {
    "sociedad": "Inmoyield 2",
@@ -38,7 +33,7 @@
    "fase": "Fase 2",
    "caja": 143877.0,
    "capitalInvertido": 6437032.0,
-   "cajaProyectada90d": -376123.0
+   "cajaProyectada90d": -372165.5
   },
   {
    "sociedad": "Inmoyield 4",
@@ -52,7 +47,7 @@
    "fase": "Fase 2",
    "caja": 2830.42,
    "capitalInvertido": 1638083.79,
-   "cajaProyectada90d": -114200.58
+   "cajaProyectada90d": 45008.42
   },
   {
    "sociedad": "F Integradas 1",
@@ -66,7 +61,7 @@
    "fase": "Integradas",
    "caja": 2596.0,
    "capitalInvertido": 0.0,
-   "cajaProyectada90d": 2596.0
+   "cajaProyectada90d": -274404.0
   }
  ],
  "cajaTotal": 155142.28,
@@ -85,11 +80,11 @@
   {
    "mes": "Noviembre 2026",
    "iso": "2026-11",
-   "cobros": 170000.0,
-   "pagos": -991014.0,
-   "neto": -821014.0,
-   "cajaAcumulada": -734588.72,
-   "cajaConVencimientos": 982211.28
+   "cobros": 176957.5,
+   "pagos": -1028971.5,
+   "neto": -852014.0,
+   "cajaAcumulada": -765588.72,
+   "cajaConVencimientos": 951211.28
   },
   {
    "mes": "Diciembre 2026",
@@ -97,8 +92,8 @@
    "cobros": 197179.0,
    "pagos": -37970.0,
    "neto": 159209.0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 7553564.89
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 7522564.89
   },
   {
    "mes": "Enero 2027",
@@ -106,8 +101,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 7553564.89
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 7522564.89
   },
   {
    "mes": "Febrero 2027",
@@ -115,8 +110,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 9853624.89
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 9822624.89
   },
   {
    "mes": "Marzo 2027",
@@ -124,8 +119,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 9853624.89
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 9822624.89
   },
   {
    "mes": "Abril 2027",
@@ -133,8 +128,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 9853624.89
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 9822624.89
   },
   {
    "mes": "Mayo 2027",
@@ -142,8 +137,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 9853624.89
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 9822624.89
   },
   {
    "mes": "Junio 2027",
@@ -151,8 +146,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 12859672.86
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 12828672.86
   },
   {
    "mes": "Julio 2027",
@@ -160,8 +155,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 12859672.86
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 12828672.86
   },
   {
    "mes": "Agosto 2027",
@@ -169,8 +164,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 12859672.86
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 12828672.86
   },
   {
    "mes": "Septiembre 2027",
@@ -178,8 +173,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Octubre 2027",
@@ -187,8 +182,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Noviembre 2027",
@@ -196,8 +191,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Diciembre 2027",
@@ -205,8 +200,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Enero 2028",
@@ -214,8 +209,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Febrero 2028",
@@ -223,8 +218,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Marzo 2028",
@@ -232,8 +227,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Abril 2028",
@@ -241,8 +236,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Mayo 2028",
@@ -250,8 +245,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 13861664.11
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 13830664.11
   },
   {
    "mes": "Junio 2028",
@@ -259,8 +254,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 16752055.85
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 16721055.85
   },
   {
    "mes": "Julio 2028",
@@ -268,8 +263,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 16752055.85
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 16721055.85
   },
   {
    "mes": "Agosto 2028",
@@ -277,8 +272,8 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 16752055.85
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 16721055.85
   },
   {
    "mes": "Septiembre 2028",
@@ -286,12 +281,12 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -575379.72,
-   "cajaConVencimientos": 16752055.85
+   "cajaAcumulada": -606379.72,
+   "cajaConVencimientos": 16721055.85
   }
  ],
  "mesDeficit": "Noviembre 2026",
- "minCajaAcumulada": -734588.72,
+ "minCajaAcumulada": -765588.72,
  "movimientos": [
   {
    "fecha": "2026-10-25",
@@ -317,11 +312,11 @@
    "fecha": "2026-11-01",
    "concepto": "Favara",
    "proyecto": "Favara",
-   "sociedad": "Inmoyield Fases Integradas 2",
+   "sociedad": "F Integradas 2",
    "tipo": "Pago",
    "importe": -24000.0,
    "estado": "Por confirmar",
-   "nota": null
+   "nota": "arras"
   },
   {
    "fecha": "2026-11-01",
@@ -335,13 +330,23 @@
   },
   {
    "fecha": "2026-11-15",
+   "concepto": "Cobro por adelanto a Unixa (Querella)",
+   "proyecto": "Querella Velzia",
+   "sociedad": "Inmoyield 3",
+   "tipo": "Cobro",
+   "importe": 6957.5,
+   "estado": "Comprometido",
+   "nota": "se pago el 100% desde Inm3 pero es 50-50 con I.1"
+  },
+  {
+   "fecha": "2026-11-15",
    "concepto": "Devolución Nacho / Bafi",
    "proyecto": null,
    "sociedad": "Inmoyield 3",
    "tipo": "Pago",
-   "importe": -520000.0,
+   "importe": -523000.0,
    "estado": "Previsto",
-   "nota": "770k"
+   "nota": "Interés al 10% corriendo desde 2 tramos dif."
   },
   {
    "fecha": "2026-11-15",
@@ -357,11 +362,21 @@
    "fecha": "2026-11-15",
    "concepto": "Favara",
    "proyecto": "Favara",
-   "sociedad": null,
+   "sociedad": "F Integradas 2",
    "tipo": "Pago",
-   "importe": -225000.0,
+   "importe": -253000.0,
    "estado": "Por confirmar",
-   "nota": null
+   "nota": "225k de CV + ITP, notarías, registro y DD"
+  },
+  {
+   "fecha": "2026-11-15",
+   "concepto": "Pago por adelanto a Unixa (Querella)",
+   "proyecto": "Querella Velzia",
+   "sociedad": "Inmoyield 1",
+   "tipo": "Pago",
+   "importe": -6957.5,
+   "estado": "Comprometido",
+   "nota": "se pago el 100% desde Inm3 pero es 50-50 con I.1. "
   },
   {
    "fecha": "2026-11-25",
@@ -377,7 +392,7 @@
    "fecha": "2026-12-30",
    "concepto": "Carlet - cobro arras",
    "proyecto": "Carlet",
-   "sociedad": null,
+   "sociedad": "Inmoyield Fase 2 Desarrollo",
    "tipo": "Cobro",
    "importe": 197179.0,
    "estado": "Previsto",
@@ -387,34 +402,14 @@
    "fecha": "2026-12-30",
    "concepto": "Carlet - diciembre",
    "proyecto": "Carlet",
-   "sociedad": null,
+   "sociedad": "Inmoyield Fase 2 Desarrollo",
    "tipo": "Pago",
    "importe": -37970.0,
    "estado": "Comprometido",
    "nota": null
-  },
-  {
-   "fecha": null,
-   "concepto": "Cobro por adelanto a Unixa (Querella)",
-   "proyecto": "Querella Velzia",
-   "sociedad": "Inmoyield 3",
-   "tipo": "Cobro",
-   "importe": 6957.5,
-   "estado": "Comprometido",
-   "nota": "se pago el 100% desde Inm3 pero es 50-50 con I.1"
-  },
-  {
-   "fecha": null,
-   "concepto": "Pago por adelanto a Unixa (Querella)",
-   "proyecto": "Querella Velzia",
-   "sociedad": "Inmoyield 1",
-   "tipo": "Pago",
-   "importe": -6957.5,
-   "estado": "Comprometido",
-   "nota": "se pago el 100% desde Inm3 pero es 50-50 con I.1"
   }
  ],
- "cobros90d": 367179.0,
- "pagos90d": -1097701.0,
- "cajaProyectada90d": -575379.72
+ "cobros90d": 374136.5,
+ "pagos90d": -1135658.5,
+ "cajaProyectada90d": -606379.72
 }
