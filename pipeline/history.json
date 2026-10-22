@@ -341,6 +341,270 @@
      "detalle": "Nuevo comentario: \"20.10 Inscripción en registro completada. Enviadas notas simples a PropHero para cerrar arras.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-10-22",
+   "cambios": [
+    {
+     "tipo": "situacion",
+     "proyecto": "Alcántara 62 (Mad-7)",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Situación: — → Arras firmadas"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Carlet (15 viv.)",
+     "fase": "FASE 2",
+     "partner": "PropHero",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Equity de Napala (F2)",
+     "fase": "FASE 2",
+     "partner": "Napala",
+     "detalle": "Situación: — → Capitalizado"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"Modificación de proyecto\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 1",
+     "partner": "Sultan",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "C. Peñalver 94",
+     "fase": "FASE 2",
+     "partner": "Casas Unique",
+     "detalle": "Situación: — → Comercialización"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Equity de Napala (F1)",
+     "fase": "FASE 1",
+     "partner": "Napala",
+     "detalle": "Situación: — → Capitalizado"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Edificio Bétera 11 viv.",
+     "fase": "FASE 1",
+     "partner": "J.Pascual & N.Blat",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edificio Puertollano (6 viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"20.10 Deudor vuelve a mostrar disposición a negociar una dación en pago, pidiendo por 50K. Analizando si con el concurso ya declarado es posible paralizarlo y formalizar la dación. Paralelamente seguimos recorriendo el procedimiento judicial para la ejecución hipotecaria (se trata de una priemera hipoteca).\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Edificio Puertollano (6 viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Situación: — → Proceso judicial"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Promoción Salou (24viv.)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Jerónimo Zurita, 3",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Situación: — → Comercialización"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Edif. en Xátiva (29 viv.)",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Situación: — → Comercialización"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"Modificación de proyecto\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Esquivias2 (7viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Loeches 29 viviendas",
+     "fase": "FASE 1",
+     "partner": "Sagelliv",
+     "detalle": "Nuevo comentario: \"Todo vendido. Cobrados ordinarios. Mantenemos principal a tipo demora (18%)\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Loeches 29 viviendas",
+     "fase": "FASE 1",
+     "partner": "Sagelliv",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Edificio Bétera 11 viv.",
+     "fase": "FASE 2",
+     "partner": "J.Pascual & N.Blat",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Pza. Rep. Ecuador, 7",
+     "fase": "FASE 2",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"Varios interesados\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Pza. Rep. Ecuador, 7",
+     "fase": "FASE 2",
+     "partner": "Domoblock",
+     "detalle": "Situación: — → Comercialización"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Promoción Salou (24viv.)",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Villaspesa (17 viv.)",
+     "fase": "FASE 1",
+     "partner": "ArtalPro",
+     "detalle": "Nuevo comentario: \"En negociación con proveedores.\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Edif. Villaspesa (17 viv.)",
+     "fase": "FASE 1",
+     "partner": "ArtalPro",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "St. Jaume Enveja 11 viv.",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Nuevo comentario: \"21.10 Dos meses previstos para finalizar la obra.\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "St. Jaume Enveja 11 viv.",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Carlet (15 viv.)",
+     "fase": "FASE 1",
+     "partner": "PropHero",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "importe",
+     "proyecto": "Edif. Mora Ebro (19 viv.)",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Importe invertido: 157.604 € → 233.604 €"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Downtown (Tarragona)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Nuevo comentario: \"Retrasos en obra por la aparición de restos arqueológicos. Elevación de precios de salida.\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Downtown (Tarragona)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"Clausula de protección al 14%\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Situación: — → Comercialización"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Cartera NPLs - Tuscany",
+     "fase": "FASE 1",
+     "partner": "Napala",
+     "detalle": "Situación: — → Capitalizado"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"Clausula protección del 14% activada.\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Castelló 120",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Situación: — → Comercialización"
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Santa Anna - Reus (8 viv)",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Situación: — → Obra en curso"
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Edif. Villaspesa (17 viv.)",
+     "fase": "FASE 2",
+     "partner": "ArtalPro",
+     "detalle": "Nuevo comentario: \"En negociación con proveedores.\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Edif. Villaspesa (17 viv.)",
+     "fase": "FASE 2",
+     "partner": "ArtalPro",
+     "detalle": "Situación: — → Obra en curso"
+    }
+   ]
   }
  ]
 }
