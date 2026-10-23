@@ -605,6 +605,25 @@
      "detalle": "Situación: — → Obra en curso"
     }
    ]
+  },
+  {
+   "fecha": "2026-10-23",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Jerónimo Zurita, 3",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"Arras firmadas. Fecha máxima escritura 20 enero. Va a intentar firmarse antes (en 2026).\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Jerónimo Zurita, 3",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Situación: Comercialización → Vendido"
+    }
+   ]
   }
  ]
 }
