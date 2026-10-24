@@ -1,3 +1,5 @@
 pipeline/live.csv
 pipeline/raw_treasury.csv
 pipeline/live.csv
+__pycache__/
+*.pyc
