@@ -624,6 +624,25 @@
      "detalle": "Situación: Comercialización → Vendido"
     }
    ]
+  },
+  {
+   "fecha": "2026-10-27",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Edificio Puertollano (6 viv.)",
+     "fase": "FASE 2",
+     "partner": "Sultan",
+     "detalle": "Nuevo comentario: \"23.10 deudor pide 50K para dación\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Loeches 29 viviendas",
+     "fase": "FASE 1",
+     "partner": "Sagelliv",
+     "detalle": "Nuevo comentario: \"Todo vendido. Cobrados ordinarios. Mantenemos principal a tipo demora (18%).\""
+    }
+   ]
   }
  ]
 }
