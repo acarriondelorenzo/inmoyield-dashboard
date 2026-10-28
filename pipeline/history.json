@@ -643,6 +643,18 @@
      "detalle": "Nuevo comentario: \"Todo vendido. Cobrados ordinarios. Mantenemos principal a tipo demora (18%).\""
     }
    ]
+  },
+  {
+   "fecha": "2026-10-28",
+   "cambios": [
+    {
+     "tipo": "importe",
+     "proyecto": "Edif. Villaspesa (17 viv.)",
+     "fase": "FASE 2",
+     "partner": "ArtalPro",
+     "detalle": "Importe invertido: 20.000 € → 32.000 €"
+    }
+   ]
   }
  ]
 }
