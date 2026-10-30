@@ -655,6 +655,18 @@
      "detalle": "Importe invertido: 20.000 € → 32.000 €"
     }
    ]
+  },
+  {
+   "fecha": "2026-10-30",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Carlet (15 viv.)",
+     "fase": "FASE 2",
+     "partner": "PropHero",
+     "detalle": "Nuevo comentario: \"Reservada primera venta\""
+    }
+   ]
   }
  ]
 }
