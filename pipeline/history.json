@@ -693,6 +693,18 @@
      "detalle": "Nuevo comentario: \"04.11 Tasaciones en curso. Fin plazo escrituras 16 Dic.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-11-10",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Albal",
+     "fase": "FASE 1",
+     "partner": "P&B",
+     "detalle": "Nuevo comentario: \"9.11 ingresado adelanto 130K\""
+    }
+   ]
   }
  ]
 }
