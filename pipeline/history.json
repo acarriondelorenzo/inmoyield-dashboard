@@ -621,6 +621,18 @@
      "detalle": "Nuevo comentario: \"Inicio trabajos de limpieza\""
     }
    ]
+  },
+  {
+   "fecha": "2026-11-14",
+   "cambios": [
+    {
+     "tipo": "nuevo_detectado",
+     "proyecto": "Castelló Rugat (18 viv.)",
+     "fase": "FASE 1",
+     "partner": "I.E.E.",
+     "detalle": "Aparece en cartera activa por 50.000 €"
+    }
+   ]
   }
  ]
 }
