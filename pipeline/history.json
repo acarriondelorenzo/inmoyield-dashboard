@@ -1,39 +1,6 @@
 {
  "log": [
   {
-   "fecha": "2026-10-16",
-   "cambios": [
-    {
-     "tipo": "comentario",
-     "proyecto": "O Donell 18",
-     "fase": "FASE 2",
-     "partner": "Velzia",
-     "detalle": "Nuevo comentario: \"Sujeto a propuesta de plan de reestructuración de Velzia\""
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Castelló 120",
-     "fase": "FASE 1",
-     "partner": "Domoblock",
-     "detalle": "Nuevo comentario: \"inundación desde el piso superior retrasó comercialización. Ligero ajuste del precio de salida. Tipo fijo del 14% activado. Preguntado por posibilidad de rebaja del tipo fijo.\""
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Modesto Lafuente 10",
-     "fase": "FASE 1",
-     "partner": "Domoblock",
-     "detalle": "Nuevo comentario: \"Ligero ajuste del precio de salida. Tipo fijo del 14% activado. Preguntado por posibilidad de rebaja del tipo fijo.\""
-    },
-    {
-     "tipo": "comentario",
-     "proyecto": "Jerónimo Zurita, 3",
-     "fase": "FASE 1",
-     "partner": "Domoblock",
-     "detalle": "Nuevo comentario: \"en comercialización. sin ajuste de precio. estuvo cerca de cierre en agosto.\""
-    }
-   ]
-  },
-  {
    "fecha": "2026-10-20",
    "cambios": [
     {
