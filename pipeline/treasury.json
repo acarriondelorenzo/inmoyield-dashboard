@@ -2,8 +2,8 @@
  "version": 2,
  "fuente": "BBDD Inversiones Inmoyield - Clean",
  "avisos": [
-  "La caja prudente entra en negativo en Noviembre 2026 (-234.122 €); mínimo del horizonte: -1.042.686 €.",
-  "La «Caja + cobros - pagos 90 d» del cuadro por sociedad (-781.686 €) no coincide con la suma de los movimientos a 90 días (-1.042.686 €); suele deberse a movimientos sin sociedad o con un nombre de sociedad que no existe.",
+  "La caja prudente entra en negativo en Noviembre 2026 (-234.122 €); mínimo del horizonte: -1.043.660 €.",
+  "La «Caja + cobros - pagos 90 d» del cuadro por sociedad (-782.660 €) no coincide con la suma de los movimientos a 90 días (-1.043.660 €); suele deberse a movimientos sin sociedad o con un nombre de sociedad que no existe.",
   "Movimientos sin sociedad asignada: Fin de Obra (-76.000 €)",
   "Cobros no confirmados incluidos en la proyección a 90 días: Onda — devolución de principal e intereses (170.000 €, Previsto); Carlet - cobro arras (197.179 €, Previsto)"
  ],
@@ -21,7 +21,7 @@
    "fase": "Fase 1",
    "caja": 1106.0,
    "capitalInvertido": 565454.0,
-   "cajaProyectada90d": 597.8
+   "cajaProyectada90d": -376.25
   },
   {
    "sociedad": "Inmoyield Fase 1 Desarrollo",
@@ -94,11 +94,11 @@
    "mes": "Diciembre 2026",
    "iso": "2026-12",
    "cobros": 367179.0,
-   "pagos": -1175742.88,
-   "neto": -808563.88,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 2665473.66,
-   "cajaConFirmes": 7313.770000000019
+   "pagos": -1176716.93,
+   "neto": -809537.93,
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 2135406.55,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Enero 2027",
@@ -106,9 +106,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 2779998.86,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 2249931.75,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Febrero 2027",
@@ -116,9 +116,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 8416958.86,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 7886891.75,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Marzo 2027",
@@ -126,9 +126,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 9512318.86,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 9511344.81,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Abril 2027",
@@ -136,9 +136,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 9512318.86,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 9511344.81,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Mayo 2027",
@@ -146,9 +146,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 9512318.86,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 9511344.81,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Junio 2027",
@@ -156,9 +156,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 12566612.04,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 12565637.99,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Julio 2027",
@@ -166,9 +166,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 12566612.04,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 12565637.99,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Agosto 2027",
@@ -176,9 +176,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 12566612.04,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 12565637.99,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Septiembre 2027",
@@ -186,9 +186,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Octubre 2027",
@@ -196,9 +196,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Noviembre 2027",
@@ -206,9 +206,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Diciembre 2027",
@@ -216,9 +216,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Enero 2028",
@@ -226,9 +226,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Febrero 2028",
@@ -236,9 +236,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Marzo 2028",
@@ -246,9 +246,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Abril 2028",
@@ -256,9 +256,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Mayo 2028",
@@ -266,9 +266,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 13594208.29,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 13593234.24,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Junio 2028",
@@ -276,9 +276,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 16484600.03,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 16483625.98,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Julio 2028",
@@ -286,9 +286,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 16484600.03,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 16483625.98,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Agosto 2028",
@@ -296,9 +296,9 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 16484600.03,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 16483625.98,
+   "cajaConFirmes": 6339.719999999972
   },
   {
    "mes": "Septiembre 2028",
@@ -306,13 +306,13 @@
    "cobros": 0,
    "pagos": 0,
    "neto": 0,
-   "cajaAcumulada": -1042686.23,
-   "cajaConVencimientos": 16484600.03,
-   "cajaConFirmes": 7313.770000000019
+   "cajaAcumulada": -1043660.28,
+   "cajaConVencimientos": 16483625.98,
+   "cajaConFirmes": 6339.719999999972
   }
  ],
  "mesDeficit": "Noviembre 2026",
- "minCajaAcumulada": -1042686.23,
+ "minCajaAcumulada": -1043660.28,
  "movimientos": [
   {
    "fecha": "2026-11-07",
@@ -506,6 +506,16 @@
   },
   {
    "fecha": "2026-12-15",
+   "concepto": "ICOND - Ing. Garajes",
+   "proyecto": "Edif. Tombatossals",
+   "sociedad": "Inmoyield 2",
+   "tipo": "Pago",
+   "importe": -974.05,
+   "estado": "Comprometido",
+   "nota": "70% del pago por gestiones licencia garaje"
+  },
+  {
+   "fecha": "2026-12-15",
    "concepto": "Limpieza 3/3",
    "proyecto": "Edif. Villaspesa (17 viv.)",
    "sociedad": "F Integradas 1",
@@ -544,8 +554,8 @@
   }
  ],
  "mesDeficitConFirmes": null,
- "minCajaConFirmes": 7313.770000000019,
+ "minCajaConFirmes": 6339.719999999972,
  "cobros90d": 374136.5,
- "pagos90d": -1506862.73,
- "cajaProyectada90d": -1042686.23
+ "pagos90d": -1507836.78,
+ "cajaProyectada90d": -1043660.28
 }
