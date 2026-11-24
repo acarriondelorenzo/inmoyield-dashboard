@@ -184,6 +184,32 @@
      "detalle": "Nuevo comentario: \"Todo vendido. Cobrados ordinarios. Mantenemos principal a tipo demora (18 %)\""
     }
    ]
+  },
+  {
+   "fecha": "2026-11-24",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Modesto Lafuente 10",
+     "fase": "FASE 1",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"19.11 Arras firmadas para escriturar el 12 feb. Clausula de protección al 14%\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Albal",
+     "fase": "FASE 1",
+     "partner": "P&B",
+     "detalle": "Nuevo comentario: \"9.11 ingresado adelanto 130K. Principal a recibir en Nov. Int. entre Dic y En.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Pza. Rep. Ecuador, 7",
+     "fase": "FASE 2",
+     "partner": "Domoblock",
+     "detalle": "Nuevo comentario: \"19.11 Arras firmadas para escriturar el 17 de Dic.\""
+    }
+   ]
   }
  ]
 }

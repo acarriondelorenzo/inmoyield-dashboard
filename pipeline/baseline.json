@@ -22,7 +22,7 @@
   "estROI": 50.0,
   "meses": "11,4",
   "situacion": "Vendido",
-  "comentarios": "9.11 ingresado adelanto 130K",
+  "comentarios": "9.11 ingresado adelanto 130K. Principal a recibir en Nov. Int. entre Dic y En.",
   "flags": []
  },
  {
@@ -104,32 +104,6 @@
   "flags": []
  },
  {
-  "proyecto": "Pza. Rep. Ecuador, 7",
-  "fase": "FASE 2",
-  "sl": "Inmoyield 3",
-  "provincia": "Madrid",
-  "municipio": "Madrid",
-  "tipoActivo": "Vivienda",
-  "tipologia": "Flipping",
-  "canal": "Directo",
-  "partner": "Domoblock",
-  "formato": "Deuda",
-  "contrato": "Préstamo participativo",
-  "importe": 400000.0,
-  "fechaInicio": "2026-02-17",
-  "fechaFin": null,
-  "estFin0": "01/11/2026",
-  "estFin1": "18/12/2026",
-  "retraso": 0.5,
-  "pctEjecucion": 89.8,
-  "estTIR": 15.0,
-  "estROI": 11.25,
-  "meses": "9,0",
-  "situacion": "Arras firmadas",
-  "comentarios": "Varios interesados",
-  "flags": []
- },
- {
   "proyecto": "Modesto Lafuente 10",
   "fase": "FASE 1",
   "sl": "Inmoyield 1",
@@ -152,7 +126,7 @@
   "estROI": 9.66,
   "meses": "7,5",
   "situacion": "Arras firmadas",
-  "comentarios": "Clausula de protección al 14%",
+  "comentarios": "19.11 Arras firmadas para escriturar el 12 feb. Clausula de protección al 14%",
   "flags": []
  },
  {
@@ -205,6 +179,32 @@
   "meses": null,
   "situacion": "Enviado al registro",
   "comentarios": "04.11 Tasaciones en curso. Fin plazo escrituras 16 Dic.",
+  "flags": []
+ },
+ {
+  "proyecto": "Pza. Rep. Ecuador, 7",
+  "fase": "FASE 2",
+  "sl": "Inmoyield 3",
+  "provincia": "Madrid",
+  "municipio": "Madrid",
+  "tipoActivo": "Vivienda",
+  "tipologia": "Flipping",
+  "canal": "Directo",
+  "partner": "Domoblock",
+  "formato": "Deuda",
+  "contrato": "Préstamo participativo",
+  "importe": 400000.0,
+  "fechaInicio": "2026-02-17",
+  "fechaFin": null,
+  "estFin0": "01/11/2026",
+  "estFin1": "18/12/2026",
+  "retraso": 0.5,
+  "pctEjecucion": 89.8,
+  "estTIR": 15.0,
+  "estROI": 11.25,
+  "meses": "9,0",
+  "situacion": "Arras firmadas",
+  "comentarios": "19.11 Arras firmadas para escriturar el 17 de Dic.",
   "flags": []
  },
  {
