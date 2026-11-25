@@ -210,6 +210,32 @@
      "detalle": "Nuevo comentario: \"19.11 Arras firmadas para escriturar el 17 de Dic.\""
     }
    ]
+  },
+  {
+   "fecha": "2026-11-25",
+   "cambios": [
+    {
+     "tipo": "comentario",
+     "proyecto": "Promoción Salou (24viv.)",
+     "fase": "FASE 2",
+     "partner": "Walmaria",
+     "detalle": "Nuevo comentario: \"Los intereses de demora capitalizables por la clausula 1.2 (17.975,34 €) se incluyen como ingreso financiero del 2026 y capitalización total (29.958,90€) en la Fase1, que es la que asumio la totalidad del riesgo y gestión del retraso desde la firma del contrato original.\""
+    },
+    {
+     "tipo": "comentario",
+     "proyecto": "Promoción Salou (24viv.)",
+     "fase": "FASE 1",
+     "partner": "Walmaria",
+     "detalle": "Nuevo comentario: \"29.958,90 € de interés de demora pertenecen enteramente a Inm1 (pues es la única que asumió el riesgo desde la inversión original).\""
+    },
+    {
+     "tipo": "situacion",
+     "proyecto": "Lofts Getafe (14)",
+     "fase": "FASE 2",
+     "partner": "Make Kubo",
+     "detalle": "Situación: Comercialización → Obra en curso"
+    }
+   ]
   }
  ]
 }
