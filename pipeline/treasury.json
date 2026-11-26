@@ -55,7 +55,7 @@
    "sociedad": "F Integradas 1",
    "fase": "Integradas",
    "caja": 857.0,
-   "capitalInvertido": 438500.0,
+   "capitalInvertido": 445500.0,
    "cajaProyectada90d": -20902.83
   },
   {
@@ -67,7 +67,7 @@
   }
  ],
  "cajaTotal": 90040.0,
- "capitalInvertido": 14653284.94,
+ "capitalInvertido": 14660284.94,
  "capitalSinAsignar": 0,
  "meses": [
   {
@@ -107,7 +107,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 2198131.75,
+   "cajaConVencimientos": 2313001.75,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -117,7 +117,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 8056891.75,
+   "cajaConVencimientos": 8171761.75,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -187,7 +187,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -197,7 +197,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -207,7 +207,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -217,7 +217,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -227,7 +227,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -237,7 +237,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -247,7 +247,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -257,7 +257,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -267,7 +267,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 13763234.24,
+   "cajaConVencimientos": 13773664.24,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -277,7 +277,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 16653625.98,
+   "cajaConVencimientos": 16664055.98,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -287,7 +287,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 16653625.98,
+   "cajaConVencimientos": 16664055.98,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -297,7 +297,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 16653625.98,
+   "cajaConVencimientos": 16664055.98,
    "cajaConFirmes": 176339.71999999997
   },
   {
@@ -307,7 +307,7 @@
    "pagos": 0,
    "neto": 0,
    "cajaAcumulada": -873660.28,
-   "cajaConVencimientos": 16653625.98,
+   "cajaConVencimientos": 16664055.98,
    "cajaConFirmes": 176339.71999999997
   }
  ],
